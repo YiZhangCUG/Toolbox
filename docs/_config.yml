@@ -1,0 +1,21 @@
+# Setup
+title:        MyTools
+tagline:      A Collection of Command Line Tools
+baseurl:      "/MyTools"
+paginate:     1
+locale:       "en"
+
+# About/contact
+author:
+  name:       Yi Zhang
+  url:        https://yizhangcug.github.io
+
+# project repository
+repository: https://github.com/YiZhangCUG/MyTools.git
+
+# Gems
+plugins:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown

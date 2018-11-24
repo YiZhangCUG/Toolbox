@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>GCTools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/GCTools/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/GCTools/css/cayman.css">
+</head>
+
+  <body>
+    <section class="page-header">
+  <h1 class="project-name"><a href="/GCTools/">GCTools</a></h1>
+  <h2 class="project-tagline">A Collection of Geophysical Computation Tools</h2>
+  
+    <a href="/GCTools/tag/index.html#Forward modeling" class="btn">Forward modeling</a>
+  
+    <a href="/GCTools/tag/index.html#Gravity" class="btn">Gravity</a>
+  
+    <a href="/GCTools/tag/index.html#Spherical harmonic" class="btn">Spherical harmonic</a>
+  
+</section>
+
+    <section class="main-content">
+      
+      <h2>grav2d-cube : Forward modeling of gravitational field of cubes under the Cartesian coordinates.</h2>
+<p class="meta">11 Nov 2018</p>
+
+<ul id="markdown-toc">
+  <li><a href="#compile" id="markdown-toc-compile">Compile</a></li>
+  <li><a href="#usage" id="markdown-toc-usage">Usage</a></li>
+  <li><a href="#options" id="markdown-toc-options">Options</a></li>
+  <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+</ul>
+
+<p><a href="https://github.com/YiZhangCUG/OpenSourcePrograms">Download the source code from Github</a></p>
+
+<h2 id="compile">Compile</h2>
+
+<p>For Mac OS users, install gcc using <a href="https://brew.sh">Homebrew</a> by</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>gcc
+</code></pre></div></div>
+
+<p>For Linux users, install gcc by</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get <span class="nb">install </span>gcc
+</code></pre></div></div>
+
+<p>then go the directory of the program and <code class="highlighter-rouge">make</code> the program. Then export the directory to your $PATH.</p>
+
+<h2 id="usage">Usage</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grav2d-cube <span class="nt">-r</span>&lt;x-start&gt;/&lt;x-step&gt;/&lt;x-end&gt;/&lt;y-start&gt;/&lt;y-step&gt;/&lt;y-end&gt;/&lt;elevation&gt;|&lt;filename&gt; <span class="nt">-c</span>&lt;x-cen&gt;/&lt;y-cen&gt;/&lt;z-cen&gt;/&lt;dx&gt;/&lt;dy&gt;/&lt;dz&gt;/&lt;density&gt;|&lt;filename&gt; <span class="nt">-tgravity</span>|gx|gy|gz <span class="nt">-h</span> <span class="o">&gt;</span> out-file
+</code></pre></div></div>
+
+<h2 id="options">Options</h2>
+
+<ul>
+  <li><strong>-r</strong>: Initializing the observation points from parameters or a file. If the parameters are used, you need to specify starting and ending positions of <em>x</em> and <em>y</em> coordinates of the observation points, along with their intervals <em>dx</em> and <em>dy</em>. The interval could be a positive or negative number depending on whether the starting coordinate is bigger than the ending coordinate or not. The program could also read observation’s positions from a file, in which each line of the file contains the <em>x</em>, <em>y</em> and <em>z</em> coordinates of a observation point. Any line that starts with ‘#’ will be ignored so that you can annotate the file as you want. Note that the program uses the right-hand system for the observation points, which means the <em>x</em> and <em>y</em> directions correspond to the easting and northing directions, respectively.</li>
+  <li><strong>-c</strong>: Initializing geometric and physical properties of a cube from parameters or cubes from a file. The geometric properties of a cube is represented by its center location <em>&lt;x-cen&gt;/&lt;y-cen&gt;/&lt;z-cen&gt;</em> and spatial extensions <em>&lt;dx&gt;/&lt;dy&gt;/&lt;dz&gt;</em>. the cube’s density is appended last to the parameter string. A file that contains parameter strings is needed if you want to add multiple cubes. Each line of the file describes one cube. Also, any line that starts with ‘#’ will be ignored. Note that the program uses the reversed right-hand system for locating the cubes, in which case the <em>z</em> direction is pointing downward, and the <em>x</em> and <em>y</em> directions correspond to the northing and easting directions, respectively.</li>
+  <li><strong>-t</strong>: Choose the component of the forward calculation, which is <em>gravity</em> for gravity and <em>gx, gy</em> and <em>gz</em> gravity gradient in <em>x, y</em> and <em>z</em> directions, respectively.</li>
+  <li><strong>out-file</strong>: Output file of the forward calculated gravitational data. The program will use the standard output by default. However, you can redirect the output to a file by using the ‘&gt;’ symbol. Each line of output file consists of <em>x y z</em> positions of the observation point and the forward calculation gravitational data appended at the last.</li>
+  <li><strong>-h</strong>: Show help information.</li>
+</ul>
+
+<h2 id="examples">Examples</h2>
+
+<ul>
+  <li>Forward calculating a cube’s gravity data. The center of the cube is located at (500 m,500 m,200 m) and the size of the cube are 200 m, 100 m and 100 m in <em>x</em>, <em>y</em> and <em>z</em> directions. The density of the cube is 1.0 <script type="math/tex">g/cm^3</script>. Observation points are from 0 ~ 1000 m with 10 m spacing in both <em>x</em> and <em>y</em> directions. Moreover, the elevation of observations equals 10 m.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grav2d-cube <span class="nt">-r</span> 0/10/1000/0/10/1000/10 <span class="nt">-c</span> 500/500/200/200/100/100/1.0 <span class="nt">-t</span> gravity <span class="o">&gt;</span> one-cube-grav.txt
+</code></pre></div></div>
+
+<ul>
+  <li>Read the cube’s parameters and observation’s positions from files. And forward calculating the gravity gradient data.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grav2d-cube <span class="nt">-r</span> obs-position.txt <span class="nt">-c</span> cube-para.txt <span class="o">&gt;</span> cubes-gravity.txt
+</code></pre></div></div>
+
+
+      <footer class="site-footer">
+  <span class="site-footer-owner"><a href="http://localhost:4000">GCTools</a> is maintained by <a href="https://yizhangcug.github.io">Yi Zhang</a>.</span>
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

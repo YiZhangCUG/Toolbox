@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>GCTools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/GCTools/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/GCTools/css/cayman.css">
+</head>
+
+  <body>
+    <section class="page-header">
+  <h1 class="project-name"><a href="/GCTools/">GCTools</a></h1>
+  <h2 class="project-tagline">A Collection of Geophysical Computation Tools</h2>
+  
+    <a href="/GCTools/tag/index.html#Forward modeling" class="btn">Forward modeling</a>
+  
+    <a href="/GCTools/tag/index.html#Gravity" class="btn">Gravity</a>
+  
+    <a href="/GCTools/tag/index.html#Spherical harmonic" class="btn">Spherical harmonic</a>
+  
+</section>
+
+    <section class="main-content">
+      
+      <h2>sh2xyz : Forward calculation of topographic or gravitational data using spherical harmonic coefficients.</h2>
+<p class="meta">21 Nov 2018</p>
+
+<ul id="markdown-toc">
+  <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
+  <li><a href="#usage" id="markdown-toc-usage">Usage</a></li>
+  <li><a href="#options" id="markdown-toc-options">Options</a></li>
+  <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+</ul>
+
+<p><a href="https://github.com/YiZhangCUG/OpenSourcePrograms">Download the source from Github</a></p>
+
+<h2 id="installation">Installation</h2>
+
+<p>You need to compile the executable file <code class="highlighter-rouge">sh2xyz</code> using the <code class="highlighter-rouge">makefile</code>. Please change the variable <code class="highlighter-rouge">CC</code> in the <code class="highlighter-rouge">makefile</code> to the compiler you use. Parallel computing is enable using the <code class="highlighter-rouge">-fopenmp</code> flag, delete it if you don’t want the parallel computing.</p>
+
+<div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">CC</span> <span class="o">=</span> g++-8 <span class="nt">-fopenmp</span>
+</code></pre></div></div>
+
+<p>If you don’t have <code class="highlighter-rouge">gcc</code> installed.</p>
+<ul>
+  <li>For Mac OS users, install <code class="highlighter-rouge">gcc</code> using <a href="https://brew.sh">Homebrew</a> by</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>gcc
+</code></pre></div></div>
+
+<ul>
+  <li>For Linux users, install <code class="highlighter-rouge">gcc</code> by</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get <span class="nb">install </span>gcc
+</code></pre></div></div>
+
+<p>After the <code class="highlighter-rouge">gcc</code> is installed. Use <code class="highlighter-rouge">make</code> the compile the program. Then move or symlink the executable file <code class="highlighter-rouge">sh2xyz</code> to any directory included in your $PATH, for instance, <code class="highlighter-rouge">/usr/local/bin</code>.</p>
+
+<h2 id="usage">Usage</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sph2xyz <span class="nt">-t</span>&lt;table&gt; <span class="nt">-r</span>&lt;lonmin&gt;/&lt;lonmax&gt;/&lt;latmin&gt;/&lt;latmax&gt;[/&lt;altitude&gt;] <span class="nt">-i</span>&lt;dlon&gt;/&lt;dlat&gt; <span class="nt">-d</span>&lt;<span class="nb">type</span><span class="o">&gt;</span> <span class="nt">-f</span>&lt;<span class="nb">ln</span><span class="o">&gt;</span>/&lt;lm&gt;/&lt;hn&gt;/&lt;hm&gt; <span class="o">[</span><span class="nt">-p</span>&lt;loc-file&gt;] <span class="o">[</span><span class="nt">-s</span>&lt;refr&gt;/&lt;refR&gt;] <span class="o">[</span><span class="nt">-g</span>&lt;GM&gt;/&lt;R&gt;] <span class="o">[</span><span class="nt">-n</span>&lt;<span class="nb">type</span><span class="o">&gt;]</span> <span class="o">[</span><span class="nt">-c</span>&lt;col1&gt;,&lt;col2&gt;,&lt;col3&gt;,&lt;col4&gt;] <span class="o">[</span><span class="nt">-z</span>&lt;alti-file&gt;[+d&lt;col1&gt;,&lt;col2&gt;,&lt;col3&gt;]] <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">&gt;</span> out-file
+</code></pre></div></div>
+
+<h2 id="options">Options</h2>
+
+<ul>
+  <li><strong>-t</strong>: Input filename of the coefficients.</li>
+  <li><strong>-r</strong>: Initialize the range of observation points. Altitude of the points is optional (will be 0 if no set).</li>
+  <li><strong>-i</strong>: Intervals of the observation points.</li>
+  <li><strong>-d</strong>: Types of forward calculation.</li>
+  <li><strong>-f</strong>: Starting and ending order/degree that will be used for calculation.</li>
+  <li><strong>-p</strong>: Interpolate the forward calculated data to spherical locations read from the file.</li>
+  <li><strong>-s</strong>: short and long semi-radius of the reference coordinate system.</li>
+  <li><strong>-g</strong>: Model parameters of gravity models. This option must be set if we are calculating gravitational data.</li>
+  <li><strong>-n</strong>: Normalization type of the Associated Legendre Function.</li>
+  <li><strong>-c</strong>: Select input columns of the coefficients.</li>
+  <li><strong>-z</strong>: Initialize the observation’s altitudes from the a input file.</li>
+  <li><strong>-h</strong>: Show help information.</li>
+</ul>
+
+<h2 id="examples">Examples</h2>
+
+<p>To forward calculating an <code class="highlighter-rouge">example.SHcoeffs</code> which maximal degree/order are both 360.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh2xyz <span class="nt">-t</span> example.SHcoeffs <span class="nt">-r</span> <span class="nt">-180</span>/180/-90/90/0 <span class="nt">-i</span> 0.5/0.5 <span class="nt">-f</span> 0/0/360/360 <span class="nt">-s</span> 10000/10000 <span class="o">&gt;</span> example.txt
+</code></pre></div></div>
+
+<p>The calculated data is shown as below:
+<img src="/GCTools/assets/2018-11/sh2xyz-example.png" alt="sh2xyz example" /></p>
+
+
+      <footer class="site-footer">
+  <span class="site-footer-owner"><a href="http://localhost:4000">GCTools</a> is maintained by <a href="https://yizhangcug.github.io">Yi Zhang</a>.</span>
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

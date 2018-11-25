@@ -66,4 +66,4 @@ sh2xyz -t example.SHcoeffs -r -180/180/-90/90/0 -i 0.5/0.5 -f 0/0/360/360 -s 100
 ```
 
 The calculated data is shown as below:
-![sh2xyz example](/GCTools/assets/2018-11/sh2xyz-example.png)
+![sh2xyz example](/MyTools/assets/2018-11/sh2xyz-example.png)

@@ -55,4 +55,4 @@ gmtxy-image -i exmaple.nc
 
 The output should be as below.
 
-![example image for gmtxy-image](/DMTools/assets/2018-11/example-image-for-gmtxy-image.png)
+![example image for gmtxy-image](/MyTools/assets/2018-11/example-image-for-gmtxy-image.png)

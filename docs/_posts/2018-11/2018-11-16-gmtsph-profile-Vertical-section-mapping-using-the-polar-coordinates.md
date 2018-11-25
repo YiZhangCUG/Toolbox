@@ -55,4 +55,4 @@ gmtsph-profile -i exmaple.nc
 
 The output should be as below.
 
-![example image for gmtsph-profile](/DMTools/assets/2018-11/example-image-for-gmtsph-profile.png)
+![example image for gmtsph-profile](/MyTools/assets/2018-11/example-image-for-gmtsph-profile.png)

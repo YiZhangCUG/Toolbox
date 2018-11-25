@@ -61,4 +61,4 @@ gmtsph-regional -i exmaple.nc
 
 The output should be as below.
 
-![example image for gmtsph-regional](/MyTools/assets/2018-11/2018-11-13-example-image-for-gmtsph-regional.png)
+![example image for gmtsph-regional](/Toolbox/assets/2018-11/2018-11-13-example-image-for-gmtsph-regional.png)

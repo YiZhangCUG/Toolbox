@@ -1,7 +1,7 @@
 # Setup
-title:        MyTools
-tagline:      A Collection of Command Line Tools
-baseurl:      "/MyTools"
+title:        Toolbox
+tagline:      A Collection of Command Line Tools for data processing, mapping and more.
+baseurl:      "/Toolbox"
 paginate:     1
 locale:       "en"
 
@@ -11,7 +11,7 @@ author:
   url:        https://yizhangcug.github.io
 
 # project repository
-repository: https://github.com/YiZhangCUG/MyTools.git
+repository: https://github.com/YiZhangCUG/Toolbox.git
 
 # Gems
 plugins:

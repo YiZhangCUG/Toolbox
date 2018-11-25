@@ -11,7 +11,6 @@ tags: [Forward modeling, Spherical harmonic]
 
 
 
-[Download the source from Github](https://github.com/YiZhangCUG/GCTools)
 
 ## Installation
 

@@ -12,7 +12,6 @@ tags: [GMT]
 
 
 
-[Download the source from Github](https://github.com/YiZhangCUG/DMTools)
 
 ## Installation
 

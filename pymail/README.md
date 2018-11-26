@@ -1,7 +1,5 @@
 # pymail: Sending emails from terminal
 
-[Download the source from Github](https://github.com/YiZhangCUG/OpenSourcePrograms)
-
 ## Installation
 
 **pymail** is a [python3](https://www.python.org) script that sends emails within terminal. The main library I used here is [smtplib](https://docs.python.org/3/library/smtplib.html). In my daily work, sometimes it takes days running a program before getting the result, so that I use this script to send data to my laptop from my work station after the process is done. This has saved me a lot fo time. To use the script, simply copy the script into any directory you want and symlink the file to a directory that is included in your $PATH, for instance */usr/local/bin*, then reopen the terminal.

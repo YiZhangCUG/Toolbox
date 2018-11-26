@@ -1,7 +1,5 @@
 # Forward calculation of topographic or gravitational data using spherical harmonic coefficients
 
-[Download the source from Github](https://github.com/YiZhangCUG/OpenSourcePrograms)
-
 ## Installation
 
 You need to compile the executable file `sh2xyz` using the `makefile`. Please change the variable `CC` in the `makefile` to the compiler you use. Parallel computing is enable using the `-fopenmp` flag, delete it if you don't want the parallel computing. 

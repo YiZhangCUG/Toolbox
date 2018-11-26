@@ -1,7 +1,5 @@
 # post2blog: Update from postToBlog to post2blog
 
-[Download the source from Github](https://github.com/YiZhangCUG/OpenSourcePrograms)
-
 ## Installation
 
 **post2bolg** is a shell script that posts a markdown file to a [Github.pages](https://pages.github.com) hosted personal blog from terminal. The blog must be powered by the [Jekyll](https://jekyllrb.com). To use it, simply copy the shell script *post2blog.sh* into any directory you want and symlink the file to a directory that is included in your $PATH, for instance */usr/local/bin*, then reopen the terminal. You should be good to go by then.

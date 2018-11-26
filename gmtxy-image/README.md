@@ -1,7 +1,5 @@
 # gmtxy-image: 2D grid data image mapping using shell script and GMT5 under the Cartesian coordinates
 
-[Download the source from Github](https://github.com/YiZhangCUG/OpenSourcePrograms)
-
 ## Installation
 
 **gmtxy-image** is a shell script that plots a 2D grid data under the Cartesian coordinates using [GMT5](https://gmt.soest.hawaii.edu). To use it, simply copy the shell scripts *dispOption.sh* and *gmtxy-image.sh* into any directory you want, and symlink them to a directory that is included in your $PATH, then reopen the terminal.

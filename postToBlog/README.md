@@ -1,6 +1,5 @@
 # postToBlog: post your blog to Github.io from terminal
 
-[Download the source from Github](https://github.com/YiZhangCUG/OpenSourcePrograms)
 
 ## Installation
 

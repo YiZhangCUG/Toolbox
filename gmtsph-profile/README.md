@@ -1,7 +1,5 @@
 # gmtsph-profile: Vertical section mapping using the polar coordinates
 
-[Download the source from Github](https://github.com/YiZhangCUG/OpenSourcePrograms)
-
 ## Installation
 
 **gmtsph-profile** is a shell script that plots a 2D grid data using the polar coordinates using [GMT5](https://gmt.soest.hawaii.edu). To use it, simply copy the shell scripts *dispOption.sh* and *gmtsph-profile.sh* into any directory you want, and symlink them to a directory that is included in your $PATH, then reopen the terminal.

@@ -35,23 +35,63 @@ Usage: stt -d<minimal-depth>/<maximal-depth> [-r'WGS84'|'Earth'|'Moon'|<equator-
 + __-r__: Coordinate reference system of the output files.
 + __-o__: Orientation of the top vertex of the base icosahedron.
 + __-m__: Output filename of the Gmsh(.msh) file.
-+ __-v__: Output filename of the vertices' locations.
-+ __-t__: Output filename of the triangles' center locations.
-+ __-n__: Output filename of the triangles' neighbors.
-+ __-p__: 
-+ __-l__:
-+ __-g__:
-+ __-c__:
-+ __-s__:
-+ __-k__:
-+ __-h__:
++ __-v__: Output filename of the vertices' location.
++ __-t__: Output filename of the triangles' center location.
++ __-n__: Output filename of the triangles' neighbor.
++ __-p__: Input filename of control points' location.
++ __-l__: Input filename of control lines' location.
++ __-g__: Input filename of control polygons' location.
++ __-c__: Input filename of control circles' location.
++ __-s__: Input filename of outline shapes' location.
++ __-k__: Input filename of hole shapes' location.
++ __-h__: show help information.
 
 ## Input File Formats
 
 ### Point format
 
-### Line format
+The format of the control points' location is a plain text file. Each line of the file has the information of one control point which contains the spherical coordinates, maximal quad-tree depth, minimal resolution and physical group of the point. The program takes both the tree depth and resolution to control the fineness of the refined STT. The refinement of the STT will stop which ever the two conditions has been reached. Note that any line that starts with '#' or any empty line will be skipped. An example file:
+
+```bash
+# <longitude> <latitude> <maximal-depth> <minimal-resolution> <physical-group>
+-45 -45 5 1.0 7
+45 -45 5 1.0 7
+45 45 5 1.0 7
+-45 45 5 1.0 7
+```
 
 ### Circle format 
 
+The format of the control circles' location is a plain text file. Each line of the file has the information of one control circle which contains the spherical coordinates, spherical cap degree, maximal quad-tree depth, minimal resolution and physical group of the circle. The program takes both the tree depth and resolution to control the fineness of the refined STT. The refinement of the STT will stop which ever the two conditions has been reached. Note that any line that starts with '#' or any empty line will be skipped. An example file:
+
+```bash
+# <longitude> <latitude> <spherical-cap-degree> <maximal-depth> <minimal-resolution> <physical-group>
+45 60 30 5 0.1 12
+-20 -45 20 6 0.1 13
+```
+
+### Line format
+
+The format of the control lines', polygons', outlines', and holes' location is a plain text file. Blocks separated by empty lines contain information of control units. For each block, the first line has the number of the spherical locations, maximal quad-tree depth, minimal resolution and physical group of the unit. Followed by spherical coordinates of the unit.The program takes both the tree depth and resolution to control the fineness of the refined STT. The refinement of the STT will stop which ever the two conditions has been reached. Note that any line that starts with '#' or any empty line will be skipped. An example file:
+
+```bash
+# <number-of-points> <maximal-depth> <minimal-resolution> <physical-group>
+# <longitude> <latitude>
+# <longitude> <latitude>
+# ... ...
+4 6 0.1 5
+-10 10
+50 15
+60 55
+-15 50
+```
+
 ## Examples
+
+An example of multi-resolution STT:
+
+```bash
+stt -d 3/7 -m example.msh -l doc/control_lines.txt -g doc/control_poly.txt -c doc/control_circle.txt
+```
+
+![stt-example](doc/stt-example.png)

@@ -3,7 +3,7 @@ layout: post
 title: "stt"
 subtitle: "spherical triangular tessellation(STT) generator"
 author: Yi Zhang
-date: 2018-12-29 10:30: -0800
+date: 2018-12-29 10:30:00 -0800
 tags: [Cxx,3D modeling]
 ---
 

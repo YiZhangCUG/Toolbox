@@ -105,4 +105,4 @@ An example of multi-resolution STT:
 stt -d 3/7 -m example.msh -l doc/control_lines.txt -g doc/control_poly.txt -c doc/control_circle.txt
 ```
 
-![stt-example](assets/2018-12/stt-example.png)
+![stt-example](/assets/2018-12/stt-example.png)

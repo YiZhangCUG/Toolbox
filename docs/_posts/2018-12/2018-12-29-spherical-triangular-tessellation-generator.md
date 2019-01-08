@@ -105,9 +105,10 @@ An example of multi-resolution STT:
 stt -d 3/7 -m example.msh -l doc/control_lines.txt -g doc/control_poly.txt -c doc/control_circle.txt
 ```
 
+![stt-example](/assets/2018-12/stt-example.png)
+
 ## Citation
 
 To cite the program, please use  
 Zhang, Y., Mooney, W. D., and Chen, C. (2018). Forward calculation of gravitational ﬁelds with variable resolution 3d density models using spherical triangular tessellation: Theory and Applications. Geophysical Journal International, 215(1):363–374. [https://doi.org/10.1093/gji/ggy278](https://doi.org/10.1093/gji/ggy278)  
 
-![stt-example](/assets/2018-12/stt-example.png)

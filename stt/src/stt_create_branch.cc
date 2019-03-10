@@ -1,6 +1,6 @@
 #include "stt_class.h"
 
-void SttGenerator::CreateBranch(int upper_id,int order_id,int depth,int t_ids0,int t_ids1,int t_ids2,QuadTreeNode** node)
+void SttGenerator::CreateBranch(int upper_id,int order_id,int depth,int t_ids0,int t_ids1,int t_ids2,int phy_group,QuadTreeNode** node)
 {
 	Vertex local_vert[6];
 	QuadTreeNode* current_node;
@@ -10,6 +10,7 @@ void SttGenerator::CreateBranch(int upper_id,int order_id,int depth,int t_ids0,i
 	current_node->tri->ids[0] = t_ids0;//将上一节点的三角形顶点索引赋值给current_node内的triangle.ids,因此每一层节点实际上都保存了其本身的三角形顶点索引
 	current_node->tri->ids[1] = t_ids1;
 	current_node->tri->ids[2] = t_ids2;
+	current_node->tri->physic_group = phy_group; //继承上层的物理组
 	current_node->id = upper_id*10+order_id;//写入四叉树节点编号
 	current_node->depth = depth;//记录四叉树深度
 
@@ -46,10 +47,10 @@ void SttGenerator::CreateBranch(int upper_id,int order_id,int depth,int t_ids0,i
 			}
 		}
 
-		CreateBranch(current_node->id,1,depth+1,local_vert[0].id,local_vert[3].id,local_vert[5].id,&(current_node->children[0]));
-		CreateBranch(current_node->id,2,depth+1,local_vert[1].id,local_vert[4].id,local_vert[3].id,&(current_node->children[1]));
-		CreateBranch(current_node->id,3,depth+1,local_vert[2].id,local_vert[5].id,local_vert[4].id,&(current_node->children[2]));
-		CreateBranch(current_node->id,4,depth+1,local_vert[3].id,local_vert[4].id,local_vert[5].id,&(current_node->children[3]));
+		CreateBranch(current_node->id,1,depth+1,local_vert[0].id,local_vert[3].id,local_vert[5].id,current_node->tri->physic_group,&(current_node->children[0]));
+		CreateBranch(current_node->id,2,depth+1,local_vert[1].id,local_vert[4].id,local_vert[3].id,current_node->tri->physic_group,&(current_node->children[1]));
+		CreateBranch(current_node->id,3,depth+1,local_vert[2].id,local_vert[5].id,local_vert[4].id,current_node->tri->physic_group,&(current_node->children[2]));
+		CreateBranch(current_node->id,4,depth+1,local_vert[3].id,local_vert[4].id,local_vert[5].id,current_node->tri->physic_group,&(current_node->children[3]));
 	}
 	return;
 }

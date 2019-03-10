@@ -1,4 +1,4 @@
-CC = g++
+CC = g++-8
 PROM = stt
 CFLAGS = -I.
 DEPS = $(shell find ./src -name "*.h")

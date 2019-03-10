@@ -14,7 +14,7 @@ public:
 	int set_icosahedron_orient(char*);
 	int Routine(char [][1024]); // for a 2D array. you must specify enough dimensional information to make it unique
 	void InitialIcosahedron(double,Vertex); //初始化一个二十面体实例 需要给定一个默认半径值 二十面体顶点的经纬坐标 在init_para函数中调用
-	void CreateBranch(int,int,int,int,int,int,QuadTreeNode**); //创建分枝
+	void CreateBranch(int,int,int,int,int,int,int,QuadTreeNode**); //创建分枝
 	void CreateTree(int,int,int,int,QuadTree*);//创建树
 	void DeleteTree(QuadTreeNode**);//清空整颗树
 	void ReturnLeaf(QuadTreeNode**);//返回叶子

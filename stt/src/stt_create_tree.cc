@@ -14,6 +14,6 @@ void SttGenerator::CreateTree(int tree_id,int t_ids0,int t_ids1,int t_ids2,QuadT
 	}
 	else
 	{
-		CreateBranch(0,tree_id,0,t_ids0,t_ids1,t_ids2,&(p_tree->root));//以根节点开始创建四叉树
+		CreateBranch(0,tree_id,0,t_ids0,t_ids1,t_ids2,0,&(p_tree->root));//以根节点开始创建四叉树
 	}
 }

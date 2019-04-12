@@ -1,4 +1,4 @@
-# Model construction and forward calculation of gravity and magnetic data
+# Model construction and forward calculation of gravity and magnetic data using the Cartesian coordinates
 
 ## Program Propose
 
@@ -31,15 +31,15 @@ Usage: gm3d [-i<input-msh-name>] [-o<output-msh-name>] [-f<output-grav-file>] [-
 
 ## Options
 
-+ __-i__: Filename of the input Gmsh(.msh) file.
-+ __-o__: Filename of the output Gmsh(.msh) file.
++ __-i__: Filename of the input Gmsh(.msh) file. You need to specify which element data is used for forward modeling using the -e option.
++ __-o__: Filename of the output Gmsh(.msh) file. 
 + __-f__: Filename of the output observation file.
 + __-d__: 3D dimensions of the model space. 's' means the starting coordinate and 'e' represents the ending coordinate. 'dx' is the step length. The default value is 10/20/990/10/20/990/10/20/490.
 + __-m__: Model file that contains different types of model parameter.
 + __-e__: Element data name of the input/output Gmsh(.msh) file.
 + __-p__: Observation locations
 + __-t__: Forward component Vz, Vzx, Vzy or Vzz.
-+ __-n__: Add noise to the forward calculated data
++ __-n__: Add noise to the forward calculated data.
 + __-r__: Remove model elements with no data in the output Gmsh(.msh) file.
 + __-h__: Display help information.
 

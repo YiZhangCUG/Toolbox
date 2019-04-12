@@ -1,6 +1,6 @@
 #include "gm3d.h"
 
-int GM3D::ReadModel(char* filename,char* forward_model_name){
+int GM3D::ReadModel(char* filename,char* input_forward_model_name){
 	int temp_int,ele_type,attri_num,temp_attri,temp_id;
 	double temp_val;
 	_1dArray temp_model;
@@ -83,7 +83,10 @@ int GM3D::ReadModel(char* filename,char* forward_model_name){
 
 	//初始化数组
 	forward_model_.resize(model_num_,0.0);
-	//拷贝数组
+	//匹配数据名称
+	char forward_model_name[1024] = "\"";
+	strcat(forward_model_name,input_forward_model_name);
+	strcat(forward_model_name,"\"");
 	for (int i = 0; i < input_model_names_.size(); i++){
 		if (!strcmp(input_model_names_[i].c_str(),forward_model_name)){
 			forward_model_ = input_models_[i];

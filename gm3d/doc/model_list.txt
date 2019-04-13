@@ -1,0 +1,10 @@
+# model_type value_type model_value model_parameter
+#regular_block add 1.0 300/700/300/700/100/400
+#regular_block erase 0.0 400/600/400/600/200/300
+#regular_block add -1.0 600/800/600/800/260/360
+#tilted_block add 1.0 500/700/500/700/100/500/700/200/400/400
+#tilted_block add -1.0 200/400/200/400/100/200/400/600/800/400
+#sphere replace 1.0 500/500/250/300/200/150
+interface replace/top 1.0 example_topography.txt
+tilted_block replace 1.5 400/600/400/600/50/400/600/200/400/450
+interface erase/bot 0.0 example_topography.txt

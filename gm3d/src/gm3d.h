@@ -22,15 +22,22 @@ public:
 	//观测数据
 	int InitObs(char*);
 	int OutObs(char*);
-	//正反演函数
-	int ForwardG(char*);
-	int ForwardGx(char*);
-	int ForwardGy(char*);
-	int ForwardGz(char*);
+	//正演函数
+	int ForwardVz(char*);
+	int ForwardVzx(char*);
+	int ForwardVzy(char*);
+	int ForwardVzz(char*);
+	int ForwardDeltaT(char*,char*);
+	int ForwardDeltaTx(char*,char*);
+	int ForwardDeltaTy(char*,char*);
+	int ForwardDeltaTz(char*,char*);
+	int ForwardHax(char*,char*);
+	int ForwardHay(char*,char*);
+	int ForwardZa(char*,char*);
 private:
 	int obs_num_, model_num_, vert_num_;
 	//正演数组
-	obspointArray grav_obs_;
+	obspointArray obs_p_;
 	_2dArray input_models_;
 	_1sArray input_model_names_;
 	_1dArray forward_model_;

@@ -28,6 +28,7 @@ using namespace std;
 #define Pi (4.0*atan(1.0))
 //注意这里本来应该是e-11，考虑到单位转换，取维度单位为m，密度单位为g/cm^3，乘以G0则重力单位即为mGal
 #define G0 6.67408e-3
+#define T0 5.0e+4
 //宏函数
 #define MAX(a,b) (a>b?a:b)
 #define MIN(a,b) (a<b?a:b)

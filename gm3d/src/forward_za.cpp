@@ -16,7 +16,7 @@ int GM3D::ForwardZa(char* noise_level,char* mag_para){
 	}
 
 	//确定磁化参数
-	if (2 != sscanf(noise_level,"%lf/%lf/%lf/%lf",&I0,&A0,&I,&A)){
+	if (4 != sscanf(mag_para,"%lf/%lf/%lf/%lf",&I0,&A0,&I,&A)){
 		I = 0; A = 90;
 	}
 	else{

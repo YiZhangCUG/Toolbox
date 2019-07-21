@@ -13,17 +13,17 @@ int GM3D::InitObs(char* obs_para){
 		xmin = MIN(xs,xe); xmax = MAX(xs,xe);
 		ymin = MIN(ys,ye); ymax = MAX(ys,ye);
 
-		y = ys;
-		while(y >= ymin && y <= ymax){
-			x = xs;
-			while(x >= xmin && x <= xmax){
+		x = xs;
+		while(x >= xmin && x <= xmax){
+			y = ys;
+			while(y >= ymin && y <= ymax){
 				temp_obs.id = obs_p_.size();
 				temp_obs.x = x; temp_obs.y = y; temp_obs.z = -1.0*eleva;
 				temp_obs.val = temp_obs.dev = 0.0;
 				obs_p_.push_back(temp_obs);
-				x += dx;
+				y += dy;
 			}
-			y += dy;
+			x += dx;
 		}
 	}
 	//解析失败 按文件读入 用于反演使用或者正演计算
@@ -35,7 +35,7 @@ int GM3D::InitObs(char* obs_para){
 			if (*(temp_str.begin()) == '#') continue;
 			else{
 				//按每行3个数据解析 初始化为用于正演的观测点
-				if (3 == sscanf(temp_str.c_str(),"%lf %lf %lf",&temp_obs.x,&temp_obs.y,&temp_obs.z)){
+				if (3 == sscanf(temp_str.c_str(),"%lf %lf %lf",&temp_obs.y,&temp_obs.x,&temp_obs.z)){
 					temp_obs.z *= -1.0;
 					temp_obs.id = obs_p_.size();
 					temp_obs.val = temp_obs.dev = 0.0;

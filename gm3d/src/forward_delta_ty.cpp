@@ -18,7 +18,7 @@ int GM3D::ForwardDeltaTy(char* noise_level,char* mag_para){
 
 	//确定磁化参数
 	if (4 != sscanf(mag_para,"%lf/%lf/%lf/%lf",&I0,&A0,&I,&A)){
-		I0 = I = 0; A0 = A = 90;
+		I0 = I = 90; A0 = A = 0;
 	}
 	else{
 		I0=I0*Pi/180;

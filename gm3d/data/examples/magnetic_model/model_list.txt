@@ -1,0 +1,2 @@
+regular_block add 0.1 200/400/250/750/100/200
+regular_block add 0.1 600/800/250/750/100/200

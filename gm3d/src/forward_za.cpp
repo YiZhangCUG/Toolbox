@@ -5,7 +5,8 @@ int GM3D::ForwardZa(char* noise_level,char* mag_para){
 	double I0,A0,I,A;
 	double Alpha,Beta,Gamma;
 	double x1,x2,y1,y2,z1,z2;
-	double w111,w112,w121,w122,w211,w212,w221,w222;
+	double w111_1,w112_1,w121_1,w122_1,w211_1,w212_1,w221_1,w222_1;
+	double w111_2,w112_2,w121_2,w122_2,w211_2,w212_2,w221_2,w222_2;
 	double R222,R122,R212,R112,R221,R121,R211,R111;
 	double G222,G122,G212,G112,G221,G121,G211,G111;
 
@@ -17,7 +18,7 @@ int GM3D::ForwardZa(char* noise_level,char* mag_para){
 
 	//确定磁化参数
 	if (4 != sscanf(mag_para,"%lf/%lf/%lf/%lf",&I0,&A0,&I,&A)){
-		I = 0; A = 90;
+		I = 90; A = 0;
 	}
 	else{
 		I=I*Pi/180;
@@ -39,7 +40,8 @@ int GM3D::ForwardZa(char* noise_level,char* mag_para){
 		bar->Progressed(i);
 #pragma omp parallel for private(j,R222,R122,R212,R112,R221,R121,R211,R111,\
 		G222,G122,G212,G112,G221,G121,G211,G111,\
-		w111,w112,w121,w122,w211,w212,w221,w222,\
+		w111_1,w112_1,w121_1,w122_1,w211_1,w212_1,w221_1,w222_1,\
+		w111_2,w112_2,w121_2,w122_2,w211_2,w212_2,w221_2,w222_2,\
 		x1,x2,y1,y2,z1,z2) shared(i) schedule(guided)
 		for (j = 0; j < model_num_; j++){
 			if (fabs(forward_model_[j]) > ZERO){
@@ -56,23 +58,32 @@ int GM3D::ForwardZa(char* noise_level,char* mag_para){
 				R211=sqrt((x2-obs_p_[i].x)*(x2-obs_p_[i].x)+(y1-obs_p_[i].y)*(y1-obs_p_[i].y)+(z1-obs_p_[i].z)*(z1-obs_p_[i].z));
 				R111=sqrt((x1-obs_p_[i].x)*(x1-obs_p_[i].x)+(y1-obs_p_[i].y)*(y1-obs_p_[i].y)+(z1-obs_p_[i].z)*(z1-obs_p_[i].z));
 
-				w222=((x2-obs_p_[i].x)*(y2-obs_p_[i].y))/(R222*(z2-obs_p_[i].z));
-				w122=((x1-obs_p_[i].x)*(y2-obs_p_[i].y))/(R122*(z2-obs_p_[i].z));
-				w212=((x2-obs_p_[i].x)*(y1-obs_p_[i].y))/(R212*(z2-obs_p_[i].z));
-				w112=((x1-obs_p_[i].x)*(y1-obs_p_[i].y))/(R112*(z2-obs_p_[i].z));
-				w221=((x2-obs_p_[i].x)*(y2-obs_p_[i].y))/(R221*(z1-obs_p_[i].z));
-				w121=((x1-obs_p_[i].x)*(y2-obs_p_[i].y))/(R121*(z1-obs_p_[i].z));
-				w211=((x2-obs_p_[i].x)*(y1-obs_p_[i].y))/(R211*(z1-obs_p_[i].z));
-				w111=((x1-obs_p_[i].x)*(y1-obs_p_[i].y))/(R111*(z1-obs_p_[i].z));
+				w222_1=(x2-obs_p_[i].x)*(y2-obs_p_[i].y);
+				w122_1=(x1-obs_p_[i].x)*(y2-obs_p_[i].y);
+				w212_1=(x2-obs_p_[i].x)*(y1-obs_p_[i].y);
+				w112_1=(x1-obs_p_[i].x)*(y1-obs_p_[i].y);
+				w221_1=(x2-obs_p_[i].x)*(y2-obs_p_[i].y);
+				w121_1=(x1-obs_p_[i].x)*(y2-obs_p_[i].y);
+				w211_1=(x2-obs_p_[i].x)*(y1-obs_p_[i].y);
+				w111_1=(x1-obs_p_[i].x)*(y1-obs_p_[i].y);
+
+				w222_2=R222*(z2-obs_p_[i].z);
+				w122_2=R122*(z2-obs_p_[i].z);
+				w212_2=R212*(z2-obs_p_[i].z);
+				w112_2=R112*(z2-obs_p_[i].z);
+				w221_2=R221*(z1-obs_p_[i].z);
+				w121_2=R121*(z1-obs_p_[i].z);
+				w211_2=R211*(z1-obs_p_[i].z);
+				w111_2=R111*(z1-obs_p_[i].z);
 				
-				G222=-Gamma*arctg(w222)+Alpha*log(R222+y2-obs_p_[i].y)+Beta*log(R222+x2-obs_p_[i].x);
-				G122=-Gamma*arctg(w122)+Alpha*log(R122+y2-obs_p_[i].y)+Beta*log(R122+x1-obs_p_[i].x);
-				G212=-Gamma*arctg(w212)+Alpha*log(R212+y1-obs_p_[i].y)+Beta*log(R212+x2-obs_p_[i].x);
-				G112=-Gamma*arctg(w112)+Alpha*log(R112+y1-obs_p_[i].y)+Beta*log(R112+x1-obs_p_[i].x);
-				G221=-Gamma*arctg(w221)+Alpha*log(R221+y2-obs_p_[i].y)+Beta*log(R221+x2-obs_p_[i].x);
-				G121=-Gamma*arctg(w121)+Alpha*log(R121+y2-obs_p_[i].y)+Beta*log(R121+x1-obs_p_[i].x);
-				G211=-Gamma*arctg(w211)+Alpha*log(R211+y1-obs_p_[i].y)+Beta*log(R211+x2-obs_p_[i].x);
-				G111=-Gamma*arctg(w111)+Alpha*log(R111+y1-obs_p_[i].y)+Beta*log(R111+x1-obs_p_[i].x);
+				G222=-Gamma*atan2(w222_1,w222_2)+Alpha*log(R222+y2-obs_p_[i].y)+Beta*log(R222+x2-obs_p_[i].x);
+				G122=-Gamma*atan2(w122_1,w122_2)+Alpha*log(R122+y2-obs_p_[i].y)+Beta*log(R122+x1-obs_p_[i].x);
+				G212=-Gamma*atan2(w212_1,w212_2)+Alpha*log(R212+y1-obs_p_[i].y)+Beta*log(R212+x2-obs_p_[i].x);
+				G112=-Gamma*atan2(w112_1,w112_2)+Alpha*log(R112+y1-obs_p_[i].y)+Beta*log(R112+x1-obs_p_[i].x);
+				G221=-Gamma*atan2(w221_1,w221_2)+Alpha*log(R221+y2-obs_p_[i].y)+Beta*log(R221+x2-obs_p_[i].x);
+				G121=-Gamma*atan2(w121_1,w121_2)+Alpha*log(R121+y2-obs_p_[i].y)+Beta*log(R121+x1-obs_p_[i].x);
+				G211=-Gamma*atan2(w211_1,w211_2)+Alpha*log(R211+y1-obs_p_[i].y)+Beta*log(R211+x2-obs_p_[i].x);
+				G111=-Gamma*atan2(w111_1,w111_2)+Alpha*log(R111+y1-obs_p_[i].y)+Beta*log(R111+x1-obs_p_[i].x);
 
 				temp_obs[j] = T0/(4*Pi)*(G222-G122-G212+G112-G221+G121+G211-G111)*forward_model_[j];
 			}

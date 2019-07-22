@@ -1,0 +1,150 @@
+\hypertarget{class_progress_bar}{}\section{Progress\+Bar Class Reference}
+\label{class_progress_bar}\index{ProgressBar@{ProgressBar}}
+
+
+{\ttfamily \#include $<$progress\+\_\+bar.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_progress_bar_aabdebc9823af01c7567e7546d9f0016f}{Progress\+Bar}} ()
+\item 
+\mbox{\hyperlink{class_progress_bar_a9dd87a5354a70db0f2dc58ee471ab11a}{Progress\+Bar}} (unsigned long n\+\_\+, const char $\ast$description\+\_\+=\char`\"{}\char`\"{}, std\+::ostream \&out\+\_\+=std\+::cerr)
+\item 
+void \mbox{\hyperlink{class_progress_bar_ae15db6842561e03940c26c3b15ea98f4}{Set\+Frequency\+Update}} (unsigned long frequency\+\_\+update\+\_\+)
+\item 
+void \mbox{\hyperlink{class_progress_bar_a677df3f86909de2245babe4e5e456940}{Set\+Style}} (const char $\ast$unit\+\_\+bar\+\_\+, const char $\ast$unit\+\_\+space\+\_\+)
+\item 
+void \mbox{\hyperlink{class_progress_bar_a10a966740a7c8a67088c75276156285b}{Progressed}} (unsigned long idx\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_progress_bar_a2f4ce86f697a3f473639e67972a61c57}{Clear\+Bar\+Field}} ()
+\item 
+int \mbox{\hyperlink{class_progress_bar_a315401227d4273a425477ac9357081d4}{Get\+Console\+Width}} ()
+\item 
+int \mbox{\hyperlink{class_progress_bar_acd24506c1780a5c335c175e53482ea3c}{Get\+Bar\+Length}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \mbox{\hyperlink{class_progress_bar_a5eaa1945817db865bd2946886fed18d7}{n}}
+\item 
+unsigned int \mbox{\hyperlink{class_progress_bar_aba94b734f8c8f4069ec6419910791967}{desc\+\_\+width}}
+\item 
+unsigned long \mbox{\hyperlink{class_progress_bar_aed5b7d67c32ea53f012e4330325f8659}{frequency\+\_\+update}}
+\item 
+std\+::ostream $\ast$ \mbox{\hyperlink{class_progress_bar_a037918f48f22bb6414ef2b8f277bb370}{out}}
+\item 
+const char $\ast$ \mbox{\hyperlink{class_progress_bar_a8a36c3d4386d2c8515dad7aa0c9d4ff2}{description}}
+\item 
+const char $\ast$ \mbox{\hyperlink{class_progress_bar_ac5fe04d7f2dee49bff858171911e866c}{unit\+\_\+bar}}
+\item 
+const char $\ast$ \mbox{\hyperlink{class_progress_bar_aa5c12a9e11e108c8ead079f3456e9631}{unit\+\_\+space}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_progress_bar_aabdebc9823af01c7567e7546d9f0016f}\label{class_progress_bar_aabdebc9823af01c7567e7546d9f0016f}} 
+\index{ProgressBar@{ProgressBar}!ProgressBar@{ProgressBar}}
+\index{ProgressBar@{ProgressBar}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{ProgressBar()}{ProgressBar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Progress\+Bar\+::\+Progress\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_progress_bar_a9dd87a5354a70db0f2dc58ee471ab11a}\label{class_progress_bar_a9dd87a5354a70db0f2dc58ee471ab11a}} 
+\index{ProgressBar@{ProgressBar}!ProgressBar@{ProgressBar}}
+\index{ProgressBar@{ProgressBar}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{ProgressBar()}{ProgressBar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Progress\+Bar\+::\+Progress\+Bar (\begin{DoxyParamCaption}\item[{unsigned long}]{n\+\_\+,  }\item[{const char $\ast$}]{description\+\_\+ = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::ostream \&}]{out\+\_\+ = {\ttfamily std\+:\+:cerr} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_progress_bar_a2f4ce86f697a3f473639e67972a61c57}\label{class_progress_bar_a2f4ce86f697a3f473639e67972a61c57}} 
+\index{ProgressBar@{ProgressBar}!ClearBarField@{ClearBarField}}
+\index{ClearBarField@{ClearBarField}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{ClearBarField()}{ClearBarField()}}
+{\footnotesize\ttfamily void Progress\+Bar\+::\+Clear\+Bar\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_progress_bar_acd24506c1780a5c335c175e53482ea3c}\label{class_progress_bar_acd24506c1780a5c335c175e53482ea3c}} 
+\index{ProgressBar@{ProgressBar}!GetBarLength@{GetBarLength}}
+\index{GetBarLength@{GetBarLength}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{GetBarLength()}{GetBarLength()}}
+{\footnotesize\ttfamily int Progress\+Bar\+::\+Get\+Bar\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_progress_bar_a315401227d4273a425477ac9357081d4}\label{class_progress_bar_a315401227d4273a425477ac9357081d4}} 
+\index{ProgressBar@{ProgressBar}!GetConsoleWidth@{GetConsoleWidth}}
+\index{GetConsoleWidth@{GetConsoleWidth}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{GetConsoleWidth()}{GetConsoleWidth()}}
+{\footnotesize\ttfamily int Progress\+Bar\+::\+Get\+Console\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_progress_bar_a10a966740a7c8a67088c75276156285b}\label{class_progress_bar_a10a966740a7c8a67088c75276156285b}} 
+\index{ProgressBar@{ProgressBar}!Progressed@{Progressed}}
+\index{Progressed@{Progressed}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{Progressed()}{Progressed()}}
+{\footnotesize\ttfamily void Progress\+Bar\+::\+Progressed (\begin{DoxyParamCaption}\item[{unsigned long}]{idx\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_progress_bar_ae15db6842561e03940c26c3b15ea98f4}\label{class_progress_bar_ae15db6842561e03940c26c3b15ea98f4}} 
+\index{ProgressBar@{ProgressBar}!SetFrequencyUpdate@{SetFrequencyUpdate}}
+\index{SetFrequencyUpdate@{SetFrequencyUpdate}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{SetFrequencyUpdate()}{SetFrequencyUpdate()}}
+{\footnotesize\ttfamily void Progress\+Bar\+::\+Set\+Frequency\+Update (\begin{DoxyParamCaption}\item[{unsigned long}]{frequency\+\_\+update\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_progress_bar_a677df3f86909de2245babe4e5e456940}\label{class_progress_bar_a677df3f86909de2245babe4e5e456940}} 
+\index{ProgressBar@{ProgressBar}!SetStyle@{SetStyle}}
+\index{SetStyle@{SetStyle}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{SetStyle()}{SetStyle()}}
+{\footnotesize\ttfamily void Progress\+Bar\+::\+Set\+Style (\begin{DoxyParamCaption}\item[{const char $\ast$}]{unit\+\_\+bar\+\_\+,  }\item[{const char $\ast$}]{unit\+\_\+space\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{class_progress_bar_aba94b734f8c8f4069ec6419910791967}\label{class_progress_bar_aba94b734f8c8f4069ec6419910791967}} 
+\index{ProgressBar@{ProgressBar}!desc\_width@{desc\_width}}
+\index{desc\_width@{desc\_width}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{desc\_width}{desc\_width}}
+{\footnotesize\ttfamily unsigned int Progress\+Bar\+::desc\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_progress_bar_a8a36c3d4386d2c8515dad7aa0c9d4ff2}\label{class_progress_bar_a8a36c3d4386d2c8515dad7aa0c9d4ff2}} 
+\index{ProgressBar@{ProgressBar}!description@{description}}
+\index{description@{description}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily const char$\ast$ Progress\+Bar\+::description\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_progress_bar_aed5b7d67c32ea53f012e4330325f8659}\label{class_progress_bar_aed5b7d67c32ea53f012e4330325f8659}} 
+\index{ProgressBar@{ProgressBar}!frequency\_update@{frequency\_update}}
+\index{frequency\_update@{frequency\_update}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{frequency\_update}{frequency\_update}}
+{\footnotesize\ttfamily unsigned long Progress\+Bar\+::frequency\+\_\+update\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_progress_bar_a5eaa1945817db865bd2946886fed18d7}\label{class_progress_bar_a5eaa1945817db865bd2946886fed18d7}} 
+\index{ProgressBar@{ProgressBar}!n@{n}}
+\index{n@{n}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily unsigned long Progress\+Bar\+::n\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_progress_bar_a037918f48f22bb6414ef2b8f277bb370}\label{class_progress_bar_a037918f48f22bb6414ef2b8f277bb370}} 
+\index{ProgressBar@{ProgressBar}!out@{out}}
+\index{out@{out}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily std\+::ostream$\ast$ Progress\+Bar\+::out\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_progress_bar_ac5fe04d7f2dee49bff858171911e866c}\label{class_progress_bar_ac5fe04d7f2dee49bff858171911e866c}} 
+\index{ProgressBar@{ProgressBar}!unit\_bar@{unit\_bar}}
+\index{unit\_bar@{unit\_bar}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{unit\_bar}{unit\_bar}}
+{\footnotesize\ttfamily const char$\ast$ Progress\+Bar\+::unit\+\_\+bar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_progress_bar_aa5c12a9e11e108c8ead079f3456e9631}\label{class_progress_bar_aa5c12a9e11e108c8ead079f3456e9631}} 
+\index{ProgressBar@{ProgressBar}!unit\_space@{unit\_space}}
+\index{unit\_space@{unit\_space}!ProgressBar@{ProgressBar}}
+\subsubsection{\texorpdfstring{unit\_space}{unit\_space}}
+{\footnotesize\ttfamily const char$\ast$ Progress\+Bar\+::unit\+\_\+space\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{progress__bar_8h}{progress\+\_\+bar.\+h}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{progress__bar_8cpp}{progress\+\_\+bar.\+cpp}}\end{DoxyCompactItemize}

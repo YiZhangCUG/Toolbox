@@ -1,0 +1,393 @@
+\hypertarget{class_g_m3_d}{}\section{G\+M3D Class Reference}
+\label{class_g_m3_d}\index{GM3D@{GM3D}}
+
+
+{\ttfamily \#include $<$gm3d.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_m3_d_ae6a32dc834fb39387e33f359b007b388}{G\+M3D}} ()
+\item 
+\mbox{\hyperlink{class_g_m3_d_ae0054e01b89d111d23d4ca0d8039c19c}{$\sim$\+G\+M3D}} ()
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a5e8430d633cf08053ee05395e3ae3d12}{Build\+Regular\+Grid}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_ab398f974da9ae5f066c64457a6eb9f10}{Add\+Models}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_afc8de602a16eee397f0e890ffe5eea7b}{Add\+Regular\+Block}} (\mbox{\hyperlink{structmodelist}{modelist}})
+\item 
+int \mbox{\hyperlink{class_g_m3_d_ad83b4f92015b2a58a5a20185250bce0d}{Add\+Tilted\+Block}} (\mbox{\hyperlink{structmodelist}{modelist}})
+\item 
+int \mbox{\hyperlink{class_g_m3_d_ae1c8d36d2273f73d9744b5d358881691}{Add\+Sphere\+Block}} (\mbox{\hyperlink{structmodelist}{modelist}})
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a2d90d9301112d0c6d64f6ed862b3bdc1}{Add\+Interface\+Block}} (\mbox{\hyperlink{structmodelist}{modelist}})
+\item 
+int \mbox{\hyperlink{class_g_m3_d_ac4ae7d42841c34329b0f6759d7b25ed3}{Read\+Model}} (char $\ast$, char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a1115ede901171bef65d0287b8fb847d4}{Registered\+Ouput}} (bool)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a052c44e6d3db5ca4bd2b644ca95bb3b4}{Out\+Msh\+File}} (char $\ast$, string)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_ab209045f308eb02fe251f1817a6e1487}{Out\+Neighbor\+File}} (char $\ast$, char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_aaff9834c6b6c9f4c245ed954d448750e}{Init\+Obs}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a4921121bd02215651d1b103c6f7ce8aa}{Out\+Obs}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a22850b3775f11e04af527f63387e750e}{Forward\+Vz}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_aac2d277383d952d5bc8437c2fcd8cd56}{Forward\+Vzx}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a8eb7a4f1981bbccc1a1e6f12dc868228}{Forward\+Vzy}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_aff475e00f0f6cadb64ecca640e406023}{Forward\+Vzz}} (char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a15219677d9903abb90f53b7c6963ee4a}{Forward\+DeltaT}} (char $\ast$, char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a0e3cb604502cf6364f6651072f4d74de}{Forward\+Delta\+Tx}} (char $\ast$, char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a74b622173016857a6538f2ac525eca65}{Forward\+Delta\+Ty}} (char $\ast$, char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a54e8e678674572a08fb25d9baa8b0173}{Forward\+Delta\+Tz}} (char $\ast$, char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a333535886227e8bc3e7aa377037b872b}{Forward\+Hax}} (char $\ast$, char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a6af0750cb63017973704f70ffd9553d1}{Forward\+Hay}} (char $\ast$, char $\ast$)
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a7c8346f92a8adeeab38763a2489ce99c}{Forward\+Za}} (char $\ast$, char $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a0a99aace28a165695d8ba0529c7661bd}{obs\+\_\+num\+\_\+}}
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a005361a133eeedffc2d8b2e5b2016a4c}{model\+\_\+num\+\_\+}}
+\item 
+int \mbox{\hyperlink{class_g_m3_d_a64bfe5d2982d27a0416bc5a03d96c277}{vert\+\_\+num\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_a8cfaa8be830903eddff69eafbefbec05}{obspoint\+Array}} \mbox{\hyperlink{class_g_m3_d_a27dee47e8ed7458680f53cd10b6d7180}{obs\+\_\+p\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_aca123327d645334fb79bed52b3cda2b9}{\+\_\+2d\+Array}} \mbox{\hyperlink{class_g_m3_d_a52e40fcb10325d064e8a4722484092fe}{input\+\_\+models\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_a6294167a90c8ef0fa3236f237dd0dcec}{\+\_\+1s\+Array}} \mbox{\hyperlink{class_g_m3_d_adb40fbb23d004d5822b2e52e6b0ec9f7}{input\+\_\+model\+\_\+names\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_ad98e111309150a71ccfa43e4adbbad21}{\+\_\+1d\+Array}} \mbox{\hyperlink{class_g_m3_d_a75c411fe8ce6d7b38005d60962f8a2ab}{forward\+\_\+model\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_a0b73a679a269c470465eb862fb43ab33}{cube\+Array}} \mbox{\hyperlink{class_g_m3_d_af28fd86ad149f276a33e465a01edd4f3}{model\+\_\+cube\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_aa7b92de3a34382fdc6a258a2368eb513}{cpoint\+Array}} \mbox{\hyperlink{class_g_m3_d_ae15aa6e3b449916c3195490a4627ae02}{model\+\_\+vert\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_ad98e111309150a71ccfa43e4adbbad21}{\+\_\+1d\+Array}} \mbox{\hyperlink{class_g_m3_d_a23a1f763de550b8548e73851f3a59482}{model\+\_\+block\+\_\+val\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_a67c2c11cfcc1333d195a0c79af9e6dfc}{modelist\+Array}} \mbox{\hyperlink{class_g_m3_d_a229472281d8b8dd779b70842c44fff34}{model\+\_\+list\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_a9e4349f40fb03f26073ea0d8c99d4704}{\+\_\+1i\+Array}} \mbox{\hyperlink{class_g_m3_d_a0c107609a2e837c7aeeef24a977af1ed}{out\+\_\+ele\+\_\+ids\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_a9e4349f40fb03f26073ea0d8c99d4704}{\+\_\+1i\+Array}} \mbox{\hyperlink{class_g_m3_d_ac8c5dbe90bfea7d53ae860a30c6a4e45}{out\+\_\+ele\+\_\+data\+\_\+ids\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_a9e4349f40fb03f26073ea0d8c99d4704}{\+\_\+1i\+Array}} \mbox{\hyperlink{class_g_m3_d_ae4a26a54e08416379408abd8af63b118}{out\+\_\+vert\+\_\+ids\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_a023ca56e61d02d69a823b5e7d9845d17}{\+\_\+int2int\+Map}} \mbox{\hyperlink{class_g_m3_d_acf06f3ee177d896c53ded5ae927a9473}{vert\+\_\+out\+\_\+map\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_a023ca56e61d02d69a823b5e7d9845d17}{\+\_\+int2int\+Map}} \mbox{\hyperlink{class_g_m3_d_aadd3dfa00941dd73d81e266978944ff6}{ele\+\_\+data\+\_\+out\+\_\+map\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_ae1068d54a7271903a9efdcfac392891c}{\+\_\+2i\+Array}} \mbox{\hyperlink{class_g_m3_d_ab30012ea0e72cdc9e7d5e1a7e137c8eb}{model\+\_\+vert\+\_\+neighbor\+\_\+}}
+\item 
+\mbox{\hyperlink{head__func_8h_ae1068d54a7271903a9efdcfac392891c}{\+\_\+2i\+Array}} \mbox{\hyperlink{class_g_m3_d_a4ba9a8b512cc82c73d9d18b65da8356b}{model\+\_\+cube\+\_\+neighbor\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_g_m3_d_ae6a32dc834fb39387e33f359b007b388}\label{class_g_m3_d_ae6a32dc834fb39387e33f359b007b388}} 
+\index{GM3D@{GM3D}!GM3D@{GM3D}}
+\index{GM3D@{GM3D}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{GM3D()}{GM3D()}}
+{\footnotesize\ttfamily G\+M3\+D\+::\+G\+M3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_g_m3_d_ae0054e01b89d111d23d4ca0d8039c19c}\label{class_g_m3_d_ae0054e01b89d111d23d4ca0d8039c19c}} 
+\index{GM3D@{GM3D}!````~GM3D@{$\sim$GM3D}}
+\index{````~GM3D@{$\sim$GM3D}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{$\sim$GM3D()}{~GM3D()}}
+{\footnotesize\ttfamily G\+M3\+D\+::$\sim$\+G\+M3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_m3_d_a2d90d9301112d0c6d64f6ed862b3bdc1}\label{class_g_m3_d_a2d90d9301112d0c6d64f6ed862b3bdc1}} 
+\index{GM3D@{GM3D}!AddInterfaceBlock@{AddInterfaceBlock}}
+\index{AddInterfaceBlock@{AddInterfaceBlock}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{AddInterfaceBlock()}{AddInterfaceBlock()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Add\+Interface\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmodelist}{modelist}}}]{para\+\_\+list }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_ab398f974da9ae5f066c64457a6eb9f10}\label{class_g_m3_d_ab398f974da9ae5f066c64457a6eb9f10}} 
+\index{GM3D@{GM3D}!AddModels@{AddModels}}
+\index{AddModels@{AddModels}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{AddModels()}{AddModels()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Add\+Models (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_afc8de602a16eee397f0e890ffe5eea7b}\label{class_g_m3_d_afc8de602a16eee397f0e890ffe5eea7b}} 
+\index{GM3D@{GM3D}!AddRegularBlock@{AddRegularBlock}}
+\index{AddRegularBlock@{AddRegularBlock}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{AddRegularBlock()}{AddRegularBlock()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Add\+Regular\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmodelist}{modelist}}}]{para\+\_\+list }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_ae1c8d36d2273f73d9744b5d358881691}\label{class_g_m3_d_ae1c8d36d2273f73d9744b5d358881691}} 
+\index{GM3D@{GM3D}!AddSphereBlock@{AddSphereBlock}}
+\index{AddSphereBlock@{AddSphereBlock}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{AddSphereBlock()}{AddSphereBlock()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Add\+Sphere\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmodelist}{modelist}}}]{para\+\_\+list }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_ad83b4f92015b2a58a5a20185250bce0d}\label{class_g_m3_d_ad83b4f92015b2a58a5a20185250bce0d}} 
+\index{GM3D@{GM3D}!AddTiltedBlock@{AddTiltedBlock}}
+\index{AddTiltedBlock@{AddTiltedBlock}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{AddTiltedBlock()}{AddTiltedBlock()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Add\+Tilted\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmodelist}{modelist}}}]{para\+\_\+list }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a5e8430d633cf08053ee05395e3ae3d12}\label{class_g_m3_d_a5e8430d633cf08053ee05395e3ae3d12}} 
+\index{GM3D@{GM3D}!BuildRegularGrid@{BuildRegularGrid}}
+\index{BuildRegularGrid@{BuildRegularGrid}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{BuildRegularGrid()}{BuildRegularGrid()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Build\+Regular\+Grid (\begin{DoxyParamCaption}\item[{char $\ast$}]{space\+\_\+para }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a15219677d9903abb90f53b7c6963ee4a}\label{class_g_m3_d_a15219677d9903abb90f53b7c6963ee4a}} 
+\index{GM3D@{GM3D}!ForwardDeltaT@{ForwardDeltaT}}
+\index{ForwardDeltaT@{ForwardDeltaT}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardDeltaT()}{ForwardDeltaT()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+DeltaT (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level,  }\item[{char $\ast$}]{mag\+\_\+para }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a0e3cb604502cf6364f6651072f4d74de}\label{class_g_m3_d_a0e3cb604502cf6364f6651072f4d74de}} 
+\index{GM3D@{GM3D}!ForwardDeltaTx@{ForwardDeltaTx}}
+\index{ForwardDeltaTx@{ForwardDeltaTx}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardDeltaTx()}{ForwardDeltaTx()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+Delta\+Tx (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level,  }\item[{char $\ast$}]{mag\+\_\+para }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a74b622173016857a6538f2ac525eca65}\label{class_g_m3_d_a74b622173016857a6538f2ac525eca65}} 
+\index{GM3D@{GM3D}!ForwardDeltaTy@{ForwardDeltaTy}}
+\index{ForwardDeltaTy@{ForwardDeltaTy}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardDeltaTy()}{ForwardDeltaTy()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+Delta\+Ty (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level,  }\item[{char $\ast$}]{mag\+\_\+para }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a54e8e678674572a08fb25d9baa8b0173}\label{class_g_m3_d_a54e8e678674572a08fb25d9baa8b0173}} 
+\index{GM3D@{GM3D}!ForwardDeltaTz@{ForwardDeltaTz}}
+\index{ForwardDeltaTz@{ForwardDeltaTz}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardDeltaTz()}{ForwardDeltaTz()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+Delta\+Tz (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level,  }\item[{char $\ast$}]{mag\+\_\+para }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a333535886227e8bc3e7aa377037b872b}\label{class_g_m3_d_a333535886227e8bc3e7aa377037b872b}} 
+\index{GM3D@{GM3D}!ForwardHax@{ForwardHax}}
+\index{ForwardHax@{ForwardHax}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardHax()}{ForwardHax()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+Hax (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level,  }\item[{char $\ast$}]{mag\+\_\+para }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a6af0750cb63017973704f70ffd9553d1}\label{class_g_m3_d_a6af0750cb63017973704f70ffd9553d1}} 
+\index{GM3D@{GM3D}!ForwardHay@{ForwardHay}}
+\index{ForwardHay@{ForwardHay}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardHay()}{ForwardHay()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+Hay (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level,  }\item[{char $\ast$}]{mag\+\_\+para }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a22850b3775f11e04af527f63387e750e}\label{class_g_m3_d_a22850b3775f11e04af527f63387e750e}} 
+\index{GM3D@{GM3D}!ForwardVz@{ForwardVz}}
+\index{ForwardVz@{ForwardVz}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardVz()}{ForwardVz()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+Vz (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_aac2d277383d952d5bc8437c2fcd8cd56}\label{class_g_m3_d_aac2d277383d952d5bc8437c2fcd8cd56}} 
+\index{GM3D@{GM3D}!ForwardVzx@{ForwardVzx}}
+\index{ForwardVzx@{ForwardVzx}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardVzx()}{ForwardVzx()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+Vzx (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a8eb7a4f1981bbccc1a1e6f12dc868228}\label{class_g_m3_d_a8eb7a4f1981bbccc1a1e6f12dc868228}} 
+\index{GM3D@{GM3D}!ForwardVzy@{ForwardVzy}}
+\index{ForwardVzy@{ForwardVzy}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardVzy()}{ForwardVzy()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+Vzy (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_aff475e00f0f6cadb64ecca640e406023}\label{class_g_m3_d_aff475e00f0f6cadb64ecca640e406023}} 
+\index{GM3D@{GM3D}!ForwardVzz@{ForwardVzz}}
+\index{ForwardVzz@{ForwardVzz}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardVzz()}{ForwardVzz()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+Vzz (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a7c8346f92a8adeeab38763a2489ce99c}\label{class_g_m3_d_a7c8346f92a8adeeab38763a2489ce99c}} 
+\index{GM3D@{GM3D}!ForwardZa@{ForwardZa}}
+\index{ForwardZa@{ForwardZa}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ForwardZa()}{ForwardZa()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Forward\+Za (\begin{DoxyParamCaption}\item[{char $\ast$}]{noise\+\_\+level,  }\item[{char $\ast$}]{mag\+\_\+para }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_aaff9834c6b6c9f4c245ed954d448750e}\label{class_g_m3_d_aaff9834c6b6c9f4c245ed954d448750e}} 
+\index{GM3D@{GM3D}!InitObs@{InitObs}}
+\index{InitObs@{InitObs}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{InitObs()}{InitObs()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Init\+Obs (\begin{DoxyParamCaption}\item[{char $\ast$}]{obs\+\_\+para }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a052c44e6d3db5ca4bd2b644ca95bb3b4}\label{class_g_m3_d_a052c44e6d3db5ca4bd2b644ca95bb3b4}} 
+\index{GM3D@{GM3D}!OutMshFile@{OutMshFile}}
+\index{OutMshFile@{OutMshFile}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{OutMshFile()}{OutMshFile()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Out\+Msh\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename,  }\item[{string}]{data\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_ab209045f308eb02fe251f1817a6e1487}\label{class_g_m3_d_ab209045f308eb02fe251f1817a6e1487}} 
+\index{GM3D@{GM3D}!OutNeighborFile@{OutNeighborFile}}
+\index{OutNeighborFile@{OutNeighborFile}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{OutNeighborFile()}{OutNeighborFile()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Out\+Neighbor\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{v\+\_\+name,  }\item[{char $\ast$}]{b\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a4921121bd02215651d1b103c6f7ce8aa}\label{class_g_m3_d_a4921121bd02215651d1b103c6f7ce8aa}} 
+\index{GM3D@{GM3D}!OutObs@{OutObs}}
+\index{OutObs@{OutObs}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{OutObs()}{OutObs()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Out\+Obs (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_ac4ae7d42841c34329b0f6759d7b25ed3}\label{class_g_m3_d_ac4ae7d42841c34329b0f6759d7b25ed3}} 
+\index{GM3D@{GM3D}!ReadModel@{ReadModel}}
+\index{ReadModel@{ReadModel}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ReadModel()}{ReadModel()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Read\+Model (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename,  }\item[{char $\ast$}]{input\+\_\+forward\+\_\+model\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_m3_d_a1115ede901171bef65d0287b8fb847d4}\label{class_g_m3_d_a1115ede901171bef65d0287b8fb847d4}} 
+\index{GM3D@{GM3D}!RegisteredOuput@{RegisteredOuput}}
+\index{RegisteredOuput@{RegisteredOuput}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{RegisteredOuput()}{RegisteredOuput()}}
+{\footnotesize\ttfamily int G\+M3\+D\+::\+Registered\+Ouput (\begin{DoxyParamCaption}\item[{bool}]{remove\+\_\+empty\+\_\+element }\end{DoxyParamCaption})}
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{class_g_m3_d_aadd3dfa00941dd73d81e266978944ff6}\label{class_g_m3_d_aadd3dfa00941dd73d81e266978944ff6}} 
+\index{GM3D@{GM3D}!ele\_data\_out\_map\_@{ele\_data\_out\_map\_}}
+\index{ele\_data\_out\_map\_@{ele\_data\_out\_map\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{ele\_data\_out\_map\_}{ele\_data\_out\_map\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_a023ca56e61d02d69a823b5e7d9845d17}{\+\_\+int2int\+Map}} G\+M3\+D\+::ele\+\_\+data\+\_\+out\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_a75c411fe8ce6d7b38005d60962f8a2ab}\label{class_g_m3_d_a75c411fe8ce6d7b38005d60962f8a2ab}} 
+\index{GM3D@{GM3D}!forward\_model\_@{forward\_model\_}}
+\index{forward\_model\_@{forward\_model\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{forward\_model\_}{forward\_model\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_ad98e111309150a71ccfa43e4adbbad21}{\+\_\+1d\+Array}} G\+M3\+D\+::forward\+\_\+model\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_adb40fbb23d004d5822b2e52e6b0ec9f7}\label{class_g_m3_d_adb40fbb23d004d5822b2e52e6b0ec9f7}} 
+\index{GM3D@{GM3D}!input\_model\_names\_@{input\_model\_names\_}}
+\index{input\_model\_names\_@{input\_model\_names\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{input\_model\_names\_}{input\_model\_names\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_a6294167a90c8ef0fa3236f237dd0dcec}{\+\_\+1s\+Array}} G\+M3\+D\+::input\+\_\+model\+\_\+names\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_a52e40fcb10325d064e8a4722484092fe}\label{class_g_m3_d_a52e40fcb10325d064e8a4722484092fe}} 
+\index{GM3D@{GM3D}!input\_models\_@{input\_models\_}}
+\index{input\_models\_@{input\_models\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{input\_models\_}{input\_models\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_aca123327d645334fb79bed52b3cda2b9}{\+\_\+2d\+Array}} G\+M3\+D\+::input\+\_\+models\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_a23a1f763de550b8548e73851f3a59482}\label{class_g_m3_d_a23a1f763de550b8548e73851f3a59482}} 
+\index{GM3D@{GM3D}!model\_block\_val\_@{model\_block\_val\_}}
+\index{model\_block\_val\_@{model\_block\_val\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{model\_block\_val\_}{model\_block\_val\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_ad98e111309150a71ccfa43e4adbbad21}{\+\_\+1d\+Array}} G\+M3\+D\+::model\+\_\+block\+\_\+val\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_af28fd86ad149f276a33e465a01edd4f3}\label{class_g_m3_d_af28fd86ad149f276a33e465a01edd4f3}} 
+\index{GM3D@{GM3D}!model\_cube\_@{model\_cube\_}}
+\index{model\_cube\_@{model\_cube\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{model\_cube\_}{model\_cube\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_a0b73a679a269c470465eb862fb43ab33}{cube\+Array}} G\+M3\+D\+::model\+\_\+cube\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_a4ba9a8b512cc82c73d9d18b65da8356b}\label{class_g_m3_d_a4ba9a8b512cc82c73d9d18b65da8356b}} 
+\index{GM3D@{GM3D}!model\_cube\_neighbor\_@{model\_cube\_neighbor\_}}
+\index{model\_cube\_neighbor\_@{model\_cube\_neighbor\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{model\_cube\_neighbor\_}{model\_cube\_neighbor\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_ae1068d54a7271903a9efdcfac392891c}{\+\_\+2i\+Array}} G\+M3\+D\+::model\+\_\+cube\+\_\+neighbor\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_a229472281d8b8dd779b70842c44fff34}\label{class_g_m3_d_a229472281d8b8dd779b70842c44fff34}} 
+\index{GM3D@{GM3D}!model\_list\_@{model\_list\_}}
+\index{model\_list\_@{model\_list\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{model\_list\_}{model\_list\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_a67c2c11cfcc1333d195a0c79af9e6dfc}{modelist\+Array}} G\+M3\+D\+::model\+\_\+list\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_a005361a133eeedffc2d8b2e5b2016a4c}\label{class_g_m3_d_a005361a133eeedffc2d8b2e5b2016a4c}} 
+\index{GM3D@{GM3D}!model\_num\_@{model\_num\_}}
+\index{model\_num\_@{model\_num\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{model\_num\_}{model\_num\_}}
+{\footnotesize\ttfamily int G\+M3\+D\+::model\+\_\+num\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_ae15aa6e3b449916c3195490a4627ae02}\label{class_g_m3_d_ae15aa6e3b449916c3195490a4627ae02}} 
+\index{GM3D@{GM3D}!model\_vert\_@{model\_vert\_}}
+\index{model\_vert\_@{model\_vert\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{model\_vert\_}{model\_vert\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_aa7b92de3a34382fdc6a258a2368eb513}{cpoint\+Array}} G\+M3\+D\+::model\+\_\+vert\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_ab30012ea0e72cdc9e7d5e1a7e137c8eb}\label{class_g_m3_d_ab30012ea0e72cdc9e7d5e1a7e137c8eb}} 
+\index{GM3D@{GM3D}!model\_vert\_neighbor\_@{model\_vert\_neighbor\_}}
+\index{model\_vert\_neighbor\_@{model\_vert\_neighbor\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{model\_vert\_neighbor\_}{model\_vert\_neighbor\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_ae1068d54a7271903a9efdcfac392891c}{\+\_\+2i\+Array}} G\+M3\+D\+::model\+\_\+vert\+\_\+neighbor\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_a0a99aace28a165695d8ba0529c7661bd}\label{class_g_m3_d_a0a99aace28a165695d8ba0529c7661bd}} 
+\index{GM3D@{GM3D}!obs\_num\_@{obs\_num\_}}
+\index{obs\_num\_@{obs\_num\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{obs\_num\_}{obs\_num\_}}
+{\footnotesize\ttfamily int G\+M3\+D\+::obs\+\_\+num\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_a27dee47e8ed7458680f53cd10b6d7180}\label{class_g_m3_d_a27dee47e8ed7458680f53cd10b6d7180}} 
+\index{GM3D@{GM3D}!obs\_p\_@{obs\_p\_}}
+\index{obs\_p\_@{obs\_p\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{obs\_p\_}{obs\_p\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_a8cfaa8be830903eddff69eafbefbec05}{obspoint\+Array}} G\+M3\+D\+::obs\+\_\+p\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_ac8c5dbe90bfea7d53ae860a30c6a4e45}\label{class_g_m3_d_ac8c5dbe90bfea7d53ae860a30c6a4e45}} 
+\index{GM3D@{GM3D}!out\_ele\_data\_ids\_@{out\_ele\_data\_ids\_}}
+\index{out\_ele\_data\_ids\_@{out\_ele\_data\_ids\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{out\_ele\_data\_ids\_}{out\_ele\_data\_ids\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_a9e4349f40fb03f26073ea0d8c99d4704}{\+\_\+1i\+Array}} G\+M3\+D\+::out\+\_\+ele\+\_\+data\+\_\+ids\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_a0c107609a2e837c7aeeef24a977af1ed}\label{class_g_m3_d_a0c107609a2e837c7aeeef24a977af1ed}} 
+\index{GM3D@{GM3D}!out\_ele\_ids\_@{out\_ele\_ids\_}}
+\index{out\_ele\_ids\_@{out\_ele\_ids\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{out\_ele\_ids\_}{out\_ele\_ids\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_a9e4349f40fb03f26073ea0d8c99d4704}{\+\_\+1i\+Array}} G\+M3\+D\+::out\+\_\+ele\+\_\+ids\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_ae4a26a54e08416379408abd8af63b118}\label{class_g_m3_d_ae4a26a54e08416379408abd8af63b118}} 
+\index{GM3D@{GM3D}!out\_vert\_ids\_@{out\_vert\_ids\_}}
+\index{out\_vert\_ids\_@{out\_vert\_ids\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{out\_vert\_ids\_}{out\_vert\_ids\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_a9e4349f40fb03f26073ea0d8c99d4704}{\+\_\+1i\+Array}} G\+M3\+D\+::out\+\_\+vert\+\_\+ids\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_a64bfe5d2982d27a0416bc5a03d96c277}\label{class_g_m3_d_a64bfe5d2982d27a0416bc5a03d96c277}} 
+\index{GM3D@{GM3D}!vert\_num\_@{vert\_num\_}}
+\index{vert\_num\_@{vert\_num\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{vert\_num\_}{vert\_num\_}}
+{\footnotesize\ttfamily int G\+M3\+D\+::vert\+\_\+num\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_g_m3_d_acf06f3ee177d896c53ded5ae927a9473}\label{class_g_m3_d_acf06f3ee177d896c53ded5ae927a9473}} 
+\index{GM3D@{GM3D}!vert\_out\_map\_@{vert\_out\_map\_}}
+\index{vert\_out\_map\_@{vert\_out\_map\_}!GM3D@{GM3D}}
+\subsubsection{\texorpdfstring{vert\_out\_map\_}{vert\_out\_map\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{head__func_8h_a023ca56e61d02d69a823b5e7d9845d17}{\+\_\+int2int\+Map}} G\+M3\+D\+::vert\+\_\+out\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{gm3d_8h}{gm3d.\+h}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{add__interface__block_8cpp}{add\+\_\+interface\+\_\+block.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{add__models_8cpp}{add\+\_\+models.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{add__regular__block_8cpp}{add\+\_\+regular\+\_\+block.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{add__sphere__block_8cpp}{add\+\_\+sphere\+\_\+block.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{add__tilted__block_8cpp}{add\+\_\+tilted\+\_\+block.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{build__regular__grid_8cpp}{build\+\_\+regular\+\_\+grid.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__delta__t_8cpp}{forward\+\_\+delta\+\_\+t.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__delta__tx_8cpp}{forward\+\_\+delta\+\_\+tx.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__delta__ty_8cpp}{forward\+\_\+delta\+\_\+ty.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__delta__tz_8cpp}{forward\+\_\+delta\+\_\+tz.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__hax_8cpp}{forward\+\_\+hax.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__hay_8cpp}{forward\+\_\+hay.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__vz_8cpp}{forward\+\_\+vz.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__vzx_8cpp}{forward\+\_\+vzx.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__vzy_8cpp}{forward\+\_\+vzy.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__vzz_8cpp}{forward\+\_\+vzz.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{forward__za_8cpp}{forward\+\_\+za.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{init__obs_8cpp}{init\+\_\+obs.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{out__msh__file_8cpp}{out\+\_\+msh\+\_\+file.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{out__neighbor__file_8cpp}{out\+\_\+neighbor\+\_\+file.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{out__obs_8cpp}{out\+\_\+obs.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{read__model_8cpp}{read\+\_\+model.\+cpp}}\item 
+/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/\mbox{\hyperlink{registered__output_8cpp}{registered\+\_\+output.\+cpp}}\end{DoxyCompactItemize}

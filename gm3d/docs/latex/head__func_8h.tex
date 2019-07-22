@@ -1,0 +1,382 @@
+\hypertarget{head__func_8h}{}\section{/\+Users/zhangyi/\+Documents/\+Git\+Hub/\+Toolbox/gm3d/src/head\+\_\+func.h File Reference}
+\label{head__func_8h}\index{/Users/zhangyi/Documents/GitHub/Toolbox/gm3d/src/head\_func.h@{/Users/zhangyi/Documents/GitHub/Toolbox/gm3d/src/head\_func.h}}
+{\ttfamily \#include \char`\"{}iostream\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fstream\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sstream\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cmath\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}iomanip\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unistd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vector\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}map\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}algorithm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ctime\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}omp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}random\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmodelist}{modelist}}
+\item 
+struct \mbox{\hyperlink{structcpoint}{cpoint}}
+\item 
+struct \mbox{\hyperlink{structobspoint}{obspoint}}
+\item 
+struct \mbox{\hyperlink{structcube}{cube}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a171f39ecf5d0b8067fd66e19e82f334d}{B\+D\+L\+\_\+\+M\+AX}}~1e+30
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a9b5576fce8660b59597337f89b266e9c}{B\+D\+L\+\_\+\+M\+IN}}~-\/1e+30
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a9c7b069fee3c8184e14a7de8e5da2dc6}{P\+R\+E\+C\+I\+S\+I\+ON}}~16
+\item 
+\#define \mbox{\hyperlink{head__func_8h_ac328e551bde3d39b6d7b8cc9e048d941}{Z\+E\+RO}}~1e-\/16
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a0c233fcb94ea9f05596b48427095806e}{Pi}}~(4.\+0$\ast$atan(1.\+0))
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a6440afc9207bc5eba00d9161ff744e16}{G0}}~6.\+67408e-\/3
+\item 
+\#define \mbox{\hyperlink{head__func_8h_ad41b89d4eb6d63a0def5e5fd2a5ab326}{T0}}~5.\+0e+4
+\item 
+\#define \mbox{\hyperlink{head__func_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(a,  b)~(a$>$b?a\+:b)
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(a,  b)~(a$<$b?a\+:b)
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a11fd9fcde1d87d653938baf59c8df609}{Set\+To\+Box}}(a,  b,  in)~(\mbox{\hyperlink{head__func_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(a,\mbox{\hyperlink{head__func_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(b,in)))
+\item 
+\#define \mbox{\hyperlink{head__func_8h_ab912d02c7998c3d47d05f87be4e2c920}{B\+O\+L\+D\+R\+ED}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}31m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a4a6c893a1703c33ede7d702fe5f97c91}{B\+O\+L\+D\+G\+R\+E\+EN}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}32m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a8cec79108dfc3c61e8e32d390ec28b26}{B\+O\+L\+D\+Y\+E\+L\+L\+OW}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}33m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a11e77c19555cbd15bcc744ff36a18635}{B\+O\+L\+D\+B\+L\+UE}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}34m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{head__func_8h_aaec1a65734e33bc49e8dc8d90e9546bc}{U\+N\+D\+E\+R\+L\+I\+NE}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}4m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{head__func_8h_ab702106cf3b3e96750b6845ded4e0299}{R\+E\+S\+ET}}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a39d49b877205e65853206f931e5c2e75}{M\+O\+V\+E\+UP}}(x)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%dA\char`\"{}, (x))
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a60c20a6d25d201dedc09459516728b71}{M\+O\+V\+E\+D\+O\+WN}}(x)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%dB\char`\"{}, (x))
+\item 
+\#define \mbox{\hyperlink{head__func_8h_ab617bfac1887a80f286a71f01a193d6f}{M\+O\+V\+E\+L\+E\+FT}}(x)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%dD\char`\"{}, (x))
+\item 
+\#define \mbox{\hyperlink{head__func_8h_a129c12a33b054b40b8865f207db4b7d8}{M\+O\+V\+E\+R\+I\+G\+HT}}(x)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%dC\char`\"{}, (x))
+\item 
+\#define \mbox{\hyperlink{head__func_8h_aac1469f77295318434d1dc2d61f28c22}{M\+O\+V\+E\+TO}}(y,  x)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%d;\%dH\char`\"{}, (y), (x))
+\item 
+\#define \mbox{\hyperlink{head__func_8h_ae39a97a19b2e372929dabdc0e3822910}{C\+L\+E\+A\+R\+L\+I\+NE}}~\char`\"{}\textbackslash{}033\mbox{[}K\char`\"{}
+\item 
+\#define \mbox{\hyperlink{head__func_8h_adcd6bb613fc4cb435cb08ec8b8555c39}{C\+L\+E\+A\+R\+A\+LL}}~\char`\"{}\textbackslash{}033\mbox{[}2\+J\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef vector$<$ int $>$ \mbox{\hyperlink{head__func_8h_a9e4349f40fb03f26073ea0d8c99d4704}{\+\_\+1i\+Array}}
+\item 
+typedef vector$<$ double $>$ \mbox{\hyperlink{head__func_8h_ad98e111309150a71ccfa43e4adbbad21}{\+\_\+1d\+Array}}
+\item 
+typedef vector$<$ string $>$ \mbox{\hyperlink{head__func_8h_a6294167a90c8ef0fa3236f237dd0dcec}{\+\_\+1s\+Array}}
+\item 
+typedef vector$<$ vector$<$ int $>$ $>$ \mbox{\hyperlink{head__func_8h_ae1068d54a7271903a9efdcfac392891c}{\+\_\+2i\+Array}}
+\item 
+typedef vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{head__func_8h_aca123327d645334fb79bed52b3cda2b9}{\+\_\+2d\+Array}}
+\item 
+typedef map$<$ int, int $>$ \mbox{\hyperlink{head__func_8h_a023ca56e61d02d69a823b5e7d9845d17}{\+\_\+int2int\+Map}}
+\item 
+typedef vector$<$ \mbox{\hyperlink{structmodelist}{modelist}} $>$ \mbox{\hyperlink{head__func_8h_a67c2c11cfcc1333d195a0c79af9e6dfc}{modelist\+Array}}
+\item 
+typedef vector$<$ \mbox{\hyperlink{structcpoint}{cpoint}} $>$ \mbox{\hyperlink{head__func_8h_aa7b92de3a34382fdc6a258a2368eb513}{cpoint\+Array}}
+\item 
+typedef map$<$ string, \mbox{\hyperlink{structcpoint}{cpoint}} $>$ \mbox{\hyperlink{head__func_8h_a63a099e004cf8ead4a9bacd777347b73}{\+\_\+str2point\+Map}}
+\item 
+typedef vector$<$ \mbox{\hyperlink{structobspoint}{obspoint}} $>$ \mbox{\hyperlink{head__func_8h_a8cfaa8be830903eddff69eafbefbec05}{obspoint\+Array}}
+\item 
+typedef vector$<$ \mbox{\hyperlink{structcube}{cube}} $>$ \mbox{\hyperlink{head__func_8h_a0b73a679a269c470465eb862fb43ab33}{cube\+Array}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcpoint}{cpoint}} \mbox{\hyperlink{head__func_8h_a195a5c87c4baad91aec235bb53db7c49}{operator -\/}} (\mbox{\hyperlink{structcpoint}{cpoint}}, \mbox{\hyperlink{structcpoint}{cpoint}})
+\item 
+double \mbox{\hyperlink{head__func_8h_ac6dbcd13548856c544e38071ffdb234e}{mod\+Cpoint}} (\mbox{\hyperlink{structcpoint}{cpoint}})
+\item 
+double \mbox{\hyperlink{head__func_8h_a212a2233363937a6a5fa2064d0bdfadb}{arctg}} (double)
+\item 
+stringstream \mbox{\hyperlink{head__func_8h_a93cc64209a7aeac3d9b736083342b361}{str2ss}} (string)
+\item 
+string \mbox{\hyperlink{head__func_8h_a9312986a9344c617751ecd83e9efc01c}{cpoint\+\_\+id}} (\mbox{\hyperlink{structcpoint}{cpoint}})
+\item 
+int \mbox{\hyperlink{head__func_8h_a0ef07758674f118f5c79f3e5805c5ab3}{open\+\_\+infile}} (ifstream \&, char $\ast$)
+\item 
+int \mbox{\hyperlink{head__func_8h_ac49c2bccbf792c7d54e50ee5e2364a5a}{open\+\_\+outfile}} (ofstream \&, char $\ast$)
+\item 
+double \mbox{\hyperlink{head__func_8h_aee4091b7e30e15dfb044ca478432b1dc}{grid\+\_\+interpolate}} (double, double, double, double, double, double, double, double, double, double)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{head__func_8h_a171f39ecf5d0b8067fd66e19e82f334d}\label{head__func_8h_a171f39ecf5d0b8067fd66e19e82f334d}} 
+\index{head\_func.h@{head\_func.h}!BDL\_MAX@{BDL\_MAX}}
+\index{BDL\_MAX@{BDL\_MAX}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{BDL\_MAX}{BDL\_MAX}}
+{\footnotesize\ttfamily \#define B\+D\+L\+\_\+\+M\+AX~1e+30}
+
+\mbox{\Hypertarget{head__func_8h_a9b5576fce8660b59597337f89b266e9c}\label{head__func_8h_a9b5576fce8660b59597337f89b266e9c}} 
+\index{head\_func.h@{head\_func.h}!BDL\_MIN@{BDL\_MIN}}
+\index{BDL\_MIN@{BDL\_MIN}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{BDL\_MIN}{BDL\_MIN}}
+{\footnotesize\ttfamily \#define B\+D\+L\+\_\+\+M\+IN~-\/1e+30}
+
+\mbox{\Hypertarget{head__func_8h_a11e77c19555cbd15bcc744ff36a18635}\label{head__func_8h_a11e77c19555cbd15bcc744ff36a18635}} 
+\index{head\_func.h@{head\_func.h}!BOLDBLUE@{BOLDBLUE}}
+\index{BOLDBLUE@{BOLDBLUE}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{BOLDBLUE}{BOLDBLUE}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+B\+L\+UE~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}34m\char`\"{}}
+
+\mbox{\Hypertarget{head__func_8h_a4a6c893a1703c33ede7d702fe5f97c91}\label{head__func_8h_a4a6c893a1703c33ede7d702fe5f97c91}} 
+\index{head\_func.h@{head\_func.h}!BOLDGREEN@{BOLDGREEN}}
+\index{BOLDGREEN@{BOLDGREEN}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{BOLDGREEN}{BOLDGREEN}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+G\+R\+E\+EN~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}32m\char`\"{}}
+
+\mbox{\Hypertarget{head__func_8h_ab912d02c7998c3d47d05f87be4e2c920}\label{head__func_8h_ab912d02c7998c3d47d05f87be4e2c920}} 
+\index{head\_func.h@{head\_func.h}!BOLDRED@{BOLDRED}}
+\index{BOLDRED@{BOLDRED}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{BOLDRED}{BOLDRED}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+R\+ED~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}31m\char`\"{}}
+
+\mbox{\Hypertarget{head__func_8h_a8cec79108dfc3c61e8e32d390ec28b26}\label{head__func_8h_a8cec79108dfc3c61e8e32d390ec28b26}} 
+\index{head\_func.h@{head\_func.h}!BOLDYELLOW@{BOLDYELLOW}}
+\index{BOLDYELLOW@{BOLDYELLOW}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{BOLDYELLOW}{BOLDYELLOW}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+Y\+E\+L\+L\+OW~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}33m\char`\"{}}
+
+\mbox{\Hypertarget{head__func_8h_adcd6bb613fc4cb435cb08ec8b8555c39}\label{head__func_8h_adcd6bb613fc4cb435cb08ec8b8555c39}} 
+\index{head\_func.h@{head\_func.h}!CLEARALL@{CLEARALL}}
+\index{CLEARALL@{CLEARALL}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{CLEARALL}{CLEARALL}}
+{\footnotesize\ttfamily \#define C\+L\+E\+A\+R\+A\+LL~\char`\"{}\textbackslash{}033\mbox{[}2\+J\char`\"{}}
+
+\mbox{\Hypertarget{head__func_8h_ae39a97a19b2e372929dabdc0e3822910}\label{head__func_8h_ae39a97a19b2e372929dabdc0e3822910}} 
+\index{head\_func.h@{head\_func.h}!CLEARLINE@{CLEARLINE}}
+\index{CLEARLINE@{CLEARLINE}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{CLEARLINE}{CLEARLINE}}
+{\footnotesize\ttfamily \#define C\+L\+E\+A\+R\+L\+I\+NE~\char`\"{}\textbackslash{}033\mbox{[}K\char`\"{}}
+
+\mbox{\Hypertarget{head__func_8h_a6440afc9207bc5eba00d9161ff744e16}\label{head__func_8h_a6440afc9207bc5eba00d9161ff744e16}} 
+\index{head\_func.h@{head\_func.h}!G0@{G0}}
+\index{G0@{G0}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{G0}{G0}}
+{\footnotesize\ttfamily \#define G0~6.\+67408e-\/3}
+
+\mbox{\Hypertarget{head__func_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{head__func_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{head\_func.h@{head\_func.h}!MAX@{MAX}}
+\index{MAX@{MAX}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define M\+AX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(a$>$b?a\+:b)}
+
+\mbox{\Hypertarget{head__func_8h_a3acffbd305ee72dcd4593c0d8af64a4f}\label{head__func_8h_a3acffbd305ee72dcd4593c0d8af64a4f}} 
+\index{head\_func.h@{head\_func.h}!MIN@{MIN}}
+\index{MIN@{MIN}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define M\+IN(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(a$<$b?a\+:b)}
+
+\mbox{\Hypertarget{head__func_8h_a60c20a6d25d201dedc09459516728b71}\label{head__func_8h_a60c20a6d25d201dedc09459516728b71}} 
+\index{head\_func.h@{head\_func.h}!MOVEDOWN@{MOVEDOWN}}
+\index{MOVEDOWN@{MOVEDOWN}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{MOVEDOWN}{MOVEDOWN}}
+{\footnotesize\ttfamily \#define M\+O\+V\+E\+D\+O\+WN(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~printf(\char`\"{}\textbackslash{}033\mbox{[}\%dB\char`\"{}, (x))}
+
+\mbox{\Hypertarget{head__func_8h_ab617bfac1887a80f286a71f01a193d6f}\label{head__func_8h_ab617bfac1887a80f286a71f01a193d6f}} 
+\index{head\_func.h@{head\_func.h}!MOVELEFT@{MOVELEFT}}
+\index{MOVELEFT@{MOVELEFT}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{MOVELEFT}{MOVELEFT}}
+{\footnotesize\ttfamily \#define M\+O\+V\+E\+L\+E\+FT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~printf(\char`\"{}\textbackslash{}033\mbox{[}\%dD\char`\"{}, (x))}
+
+\mbox{\Hypertarget{head__func_8h_a129c12a33b054b40b8865f207db4b7d8}\label{head__func_8h_a129c12a33b054b40b8865f207db4b7d8}} 
+\index{head\_func.h@{head\_func.h}!MOVERIGHT@{MOVERIGHT}}
+\index{MOVERIGHT@{MOVERIGHT}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{MOVERIGHT}{MOVERIGHT}}
+{\footnotesize\ttfamily \#define M\+O\+V\+E\+R\+I\+G\+HT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~printf(\char`\"{}\textbackslash{}033\mbox{[}\%dC\char`\"{}, (x))}
+
+\mbox{\Hypertarget{head__func_8h_aac1469f77295318434d1dc2d61f28c22}\label{head__func_8h_aac1469f77295318434d1dc2d61f28c22}} 
+\index{head\_func.h@{head\_func.h}!MOVETO@{MOVETO}}
+\index{MOVETO@{MOVETO}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{MOVETO}{MOVETO}}
+{\footnotesize\ttfamily \#define M\+O\+V\+E\+TO(\begin{DoxyParamCaption}\item[{}]{y,  }\item[{}]{x }\end{DoxyParamCaption})~printf(\char`\"{}\textbackslash{}033\mbox{[}\%d;\%dH\char`\"{}, (y), (x))}
+
+\mbox{\Hypertarget{head__func_8h_a39d49b877205e65853206f931e5c2e75}\label{head__func_8h_a39d49b877205e65853206f931e5c2e75}} 
+\index{head\_func.h@{head\_func.h}!MOVEUP@{MOVEUP}}
+\index{MOVEUP@{MOVEUP}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{MOVEUP}{MOVEUP}}
+{\footnotesize\ttfamily \#define M\+O\+V\+E\+UP(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~printf(\char`\"{}\textbackslash{}033\mbox{[}\%dA\char`\"{}, (x))}
+
+\mbox{\Hypertarget{head__func_8h_a0c233fcb94ea9f05596b48427095806e}\label{head__func_8h_a0c233fcb94ea9f05596b48427095806e}} 
+\index{head\_func.h@{head\_func.h}!Pi@{Pi}}
+\index{Pi@{Pi}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{Pi}{Pi}}
+{\footnotesize\ttfamily \#define Pi~(4.\+0$\ast$atan(1.\+0))}
+
+\mbox{\Hypertarget{head__func_8h_a9c7b069fee3c8184e14a7de8e5da2dc6}\label{head__func_8h_a9c7b069fee3c8184e14a7de8e5da2dc6}} 
+\index{head\_func.h@{head\_func.h}!PRECISION@{PRECISION}}
+\index{PRECISION@{PRECISION}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{PRECISION}{PRECISION}}
+{\footnotesize\ttfamily \#define P\+R\+E\+C\+I\+S\+I\+ON~16}
+
+\mbox{\Hypertarget{head__func_8h_ab702106cf3b3e96750b6845ded4e0299}\label{head__func_8h_ab702106cf3b3e96750b6845ded4e0299}} 
+\index{head\_func.h@{head\_func.h}!RESET@{RESET}}
+\index{RESET@{RESET}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily \#define R\+E\+S\+ET~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}}
+
+\mbox{\Hypertarget{head__func_8h_a11fd9fcde1d87d653938baf59c8df609}\label{head__func_8h_a11fd9fcde1d87d653938baf59c8df609}} 
+\index{head\_func.h@{head\_func.h}!SetToBox@{SetToBox}}
+\index{SetToBox@{SetToBox}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{SetToBox}{SetToBox}}
+{\footnotesize\ttfamily \#define Set\+To\+Box(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{in }\end{DoxyParamCaption})~(\mbox{\hyperlink{head__func_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{M\+AX}}(a,\mbox{\hyperlink{head__func_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{M\+IN}}(b,in)))}
+
+\mbox{\Hypertarget{head__func_8h_ad41b89d4eb6d63a0def5e5fd2a5ab326}\label{head__func_8h_ad41b89d4eb6d63a0def5e5fd2a5ab326}} 
+\index{head\_func.h@{head\_func.h}!T0@{T0}}
+\index{T0@{T0}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{T0}{T0}}
+{\footnotesize\ttfamily \#define T0~5.\+0e+4}
+
+\mbox{\Hypertarget{head__func_8h_aaec1a65734e33bc49e8dc8d90e9546bc}\label{head__func_8h_aaec1a65734e33bc49e8dc8d90e9546bc}} 
+\index{head\_func.h@{head\_func.h}!UNDERLINE@{UNDERLINE}}
+\index{UNDERLINE@{UNDERLINE}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{UNDERLINE}{UNDERLINE}}
+{\footnotesize\ttfamily \#define U\+N\+D\+E\+R\+L\+I\+NE~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}4m\char`\"{}}
+
+\mbox{\Hypertarget{head__func_8h_ac328e551bde3d39b6d7b8cc9e048d941}\label{head__func_8h_ac328e551bde3d39b6d7b8cc9e048d941}} 
+\index{head\_func.h@{head\_func.h}!ZERO@{ZERO}}
+\index{ZERO@{ZERO}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{ZERO}{ZERO}}
+{\footnotesize\ttfamily \#define Z\+E\+RO~1e-\/16}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{head__func_8h_ad98e111309150a71ccfa43e4adbbad21}\label{head__func_8h_ad98e111309150a71ccfa43e4adbbad21}} 
+\index{head\_func.h@{head\_func.h}!\_1dArray@{\_1dArray}}
+\index{\_1dArray@{\_1dArray}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{\_1dArray}{\_1dArray}}
+{\footnotesize\ttfamily typedef vector$<$double$>$ \mbox{\hyperlink{head__func_8h_ad98e111309150a71ccfa43e4adbbad21}{\+\_\+1d\+Array}}}
+
+\mbox{\Hypertarget{head__func_8h_a9e4349f40fb03f26073ea0d8c99d4704}\label{head__func_8h_a9e4349f40fb03f26073ea0d8c99d4704}} 
+\index{head\_func.h@{head\_func.h}!\_1iArray@{\_1iArray}}
+\index{\_1iArray@{\_1iArray}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{\_1iArray}{\_1iArray}}
+{\footnotesize\ttfamily typedef vector$<$int$>$ \mbox{\hyperlink{head__func_8h_a9e4349f40fb03f26073ea0d8c99d4704}{\+\_\+1i\+Array}}}
+
+\mbox{\Hypertarget{head__func_8h_a6294167a90c8ef0fa3236f237dd0dcec}\label{head__func_8h_a6294167a90c8ef0fa3236f237dd0dcec}} 
+\index{head\_func.h@{head\_func.h}!\_1sArray@{\_1sArray}}
+\index{\_1sArray@{\_1sArray}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{\_1sArray}{\_1sArray}}
+{\footnotesize\ttfamily typedef vector$<$string$>$ \mbox{\hyperlink{head__func_8h_a6294167a90c8ef0fa3236f237dd0dcec}{\+\_\+1s\+Array}}}
+
+\mbox{\Hypertarget{head__func_8h_aca123327d645334fb79bed52b3cda2b9}\label{head__func_8h_aca123327d645334fb79bed52b3cda2b9}} 
+\index{head\_func.h@{head\_func.h}!\_2dArray@{\_2dArray}}
+\index{\_2dArray@{\_2dArray}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{\_2dArray}{\_2dArray}}
+{\footnotesize\ttfamily typedef vector$<$vector$<$double$>$ $>$ \mbox{\hyperlink{head__func_8h_aca123327d645334fb79bed52b3cda2b9}{\+\_\+2d\+Array}}}
+
+\mbox{\Hypertarget{head__func_8h_ae1068d54a7271903a9efdcfac392891c}\label{head__func_8h_ae1068d54a7271903a9efdcfac392891c}} 
+\index{head\_func.h@{head\_func.h}!\_2iArray@{\_2iArray}}
+\index{\_2iArray@{\_2iArray}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{\_2iArray}{\_2iArray}}
+{\footnotesize\ttfamily typedef vector$<$vector$<$int$>$ $>$ \mbox{\hyperlink{head__func_8h_ae1068d54a7271903a9efdcfac392891c}{\+\_\+2i\+Array}}}
+
+\mbox{\Hypertarget{head__func_8h_a023ca56e61d02d69a823b5e7d9845d17}\label{head__func_8h_a023ca56e61d02d69a823b5e7d9845d17}} 
+\index{head\_func.h@{head\_func.h}!\_int2intMap@{\_int2intMap}}
+\index{\_int2intMap@{\_int2intMap}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{\_int2intMap}{\_int2intMap}}
+{\footnotesize\ttfamily typedef map$<$int,int$>$ \mbox{\hyperlink{head__func_8h_a023ca56e61d02d69a823b5e7d9845d17}{\+\_\+int2int\+Map}}}
+
+\mbox{\Hypertarget{head__func_8h_a63a099e004cf8ead4a9bacd777347b73}\label{head__func_8h_a63a099e004cf8ead4a9bacd777347b73}} 
+\index{head\_func.h@{head\_func.h}!\_str2pointMap@{\_str2pointMap}}
+\index{\_str2pointMap@{\_str2pointMap}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{\_str2pointMap}{\_str2pointMap}}
+{\footnotesize\ttfamily typedef map$<$string,\mbox{\hyperlink{structcpoint}{cpoint}}$>$ \mbox{\hyperlink{head__func_8h_a63a099e004cf8ead4a9bacd777347b73}{\+\_\+str2point\+Map}}}
+
+\mbox{\Hypertarget{head__func_8h_aa7b92de3a34382fdc6a258a2368eb513}\label{head__func_8h_aa7b92de3a34382fdc6a258a2368eb513}} 
+\index{head\_func.h@{head\_func.h}!cpointArray@{cpointArray}}
+\index{cpointArray@{cpointArray}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{cpointArray}{cpointArray}}
+{\footnotesize\ttfamily typedef vector$<$\mbox{\hyperlink{structcpoint}{cpoint}}$>$ \mbox{\hyperlink{head__func_8h_aa7b92de3a34382fdc6a258a2368eb513}{cpoint\+Array}}}
+
+\mbox{\Hypertarget{head__func_8h_a0b73a679a269c470465eb862fb43ab33}\label{head__func_8h_a0b73a679a269c470465eb862fb43ab33}} 
+\index{head\_func.h@{head\_func.h}!cubeArray@{cubeArray}}
+\index{cubeArray@{cubeArray}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{cubeArray}{cubeArray}}
+{\footnotesize\ttfamily typedef vector$<$\mbox{\hyperlink{structcube}{cube}}$>$ \mbox{\hyperlink{head__func_8h_a0b73a679a269c470465eb862fb43ab33}{cube\+Array}}}
+
+\mbox{\Hypertarget{head__func_8h_a67c2c11cfcc1333d195a0c79af9e6dfc}\label{head__func_8h_a67c2c11cfcc1333d195a0c79af9e6dfc}} 
+\index{head\_func.h@{head\_func.h}!modelistArray@{modelistArray}}
+\index{modelistArray@{modelistArray}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{modelistArray}{modelistArray}}
+{\footnotesize\ttfamily typedef vector$<$\mbox{\hyperlink{structmodelist}{modelist}}$>$ \mbox{\hyperlink{head__func_8h_a67c2c11cfcc1333d195a0c79af9e6dfc}{modelist\+Array}}}
+
+\mbox{\Hypertarget{head__func_8h_a8cfaa8be830903eddff69eafbefbec05}\label{head__func_8h_a8cfaa8be830903eddff69eafbefbec05}} 
+\index{head\_func.h@{head\_func.h}!obspointArray@{obspointArray}}
+\index{obspointArray@{obspointArray}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{obspointArray}{obspointArray}}
+{\footnotesize\ttfamily typedef vector$<$\mbox{\hyperlink{structobspoint}{obspoint}}$>$ \mbox{\hyperlink{head__func_8h_a8cfaa8be830903eddff69eafbefbec05}{obspoint\+Array}}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{head__func_8h_a212a2233363937a6a5fa2064d0bdfadb}\label{head__func_8h_a212a2233363937a6a5fa2064d0bdfadb}} 
+\index{head\_func.h@{head\_func.h}!arctg@{arctg}}
+\index{arctg@{arctg}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{arctg()}{arctg()}}
+{\footnotesize\ttfamily double arctg (\begin{DoxyParamCaption}\item[{double}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{head__func_8h_a9312986a9344c617751ecd83e9efc01c}\label{head__func_8h_a9312986a9344c617751ecd83e9efc01c}} 
+\index{head\_func.h@{head\_func.h}!cpoint\_id@{cpoint\_id}}
+\index{cpoint\_id@{cpoint\_id}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{cpoint\_id()}{cpoint\_id()}}
+{\footnotesize\ttfamily string cpoint\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcpoint}{cpoint}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{head__func_8h_aee4091b7e30e15dfb044ca478432b1dc}\label{head__func_8h_aee4091b7e30e15dfb044ca478432b1dc}} 
+\index{head\_func.h@{head\_func.h}!grid\_interpolate@{grid\_interpolate}}
+\index{grid\_interpolate@{grid\_interpolate}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{grid\_interpolate()}{grid\_interpolate()}}
+{\footnotesize\ttfamily double grid\+\_\+interpolate (\begin{DoxyParamCaption}\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{head__func_8h_ac6dbcd13548856c544e38071ffdb234e}\label{head__func_8h_ac6dbcd13548856c544e38071ffdb234e}} 
+\index{head\_func.h@{head\_func.h}!modCpoint@{modCpoint}}
+\index{modCpoint@{modCpoint}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{modCpoint()}{modCpoint()}}
+{\footnotesize\ttfamily double mod\+Cpoint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcpoint}{cpoint}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{head__func_8h_a0ef07758674f118f5c79f3e5805c5ab3}\label{head__func_8h_a0ef07758674f118f5c79f3e5805c5ab3}} 
+\index{head\_func.h@{head\_func.h}!open\_infile@{open\_infile}}
+\index{open\_infile@{open\_infile}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{open\_infile()}{open\_infile()}}
+{\footnotesize\ttfamily int open\+\_\+infile (\begin{DoxyParamCaption}\item[{ifstream \&}]{,  }\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{head__func_8h_ac49c2bccbf792c7d54e50ee5e2364a5a}\label{head__func_8h_ac49c2bccbf792c7d54e50ee5e2364a5a}} 
+\index{head\_func.h@{head\_func.h}!open\_outfile@{open\_outfile}}
+\index{open\_outfile@{open\_outfile}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{open\_outfile()}{open\_outfile()}}
+{\footnotesize\ttfamily int open\+\_\+outfile (\begin{DoxyParamCaption}\item[{ofstream \&}]{,  }\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{head__func_8h_a195a5c87c4baad91aec235bb53db7c49}\label{head__func_8h_a195a5c87c4baad91aec235bb53db7c49}} 
+\index{head\_func.h@{head\_func.h}!operator -\/@{operator -\/}}
+\index{operator -\/@{operator -\/}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{operator -\/()}{operator -()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcpoint}{cpoint}} operator -\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcpoint}{cpoint}}}]{,  }\item[{\mbox{\hyperlink{structcpoint}{cpoint}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{head__func_8h_a93cc64209a7aeac3d9b736083342b361}\label{head__func_8h_a93cc64209a7aeac3d9b736083342b361}} 
+\index{head\_func.h@{head\_func.h}!str2ss@{str2ss}}
+\index{str2ss@{str2ss}!head\_func.h@{head\_func.h}}
+\subsubsection{\texorpdfstring{str2ss()}{str2ss()}}
+{\footnotesize\ttfamily stringstream str2ss (\begin{DoxyParamCaption}\item[{string}]{ }\end{DoxyParamCaption})}
+

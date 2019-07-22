@@ -43,7 +43,7 @@ int grav2d_cube::initCubes(char* para)
 	stringstream temp_ss;
 
 	if (7 == sscanf(para,"%lf/%lf/%lf/%lf/%lf/%lf/%lf",
-		&temp_cube.cen.x,&temp_cube.cen.y,&temp_cube.cen.z,&temp_cube.dx,&temp_cube.dy,&temp_cube.dz,&temp_cube.rho))
+		&temp_cube.cen.y,&temp_cube.cen.x,&temp_cube.cen.z,&temp_cube.dy,&temp_cube.dx,&temp_cube.dz,&temp_cube.rho))
 	{
 		modCube.push_back(temp_cube);
 	}
@@ -59,7 +59,7 @@ int grav2d_cube::initCubes(char* para)
 			{
 				//按每行7个数据解析 初始化为用于正演的观测点
 				if (7 == sscanf(temp_str.c_str(),"%lf/%lf/%lf/%lf/%lf/%lf/%lf",
-					&temp_cube.cen.x,&temp_cube.cen.y,&temp_cube.cen.z,&temp_cube.dx,&temp_cube.dy,&temp_cube.dz,&temp_cube.rho))
+					&temp_cube.cen.y,&temp_cube.cen.x,&temp_cube.cen.z,&temp_cube.dy,&temp_cube.dx,&temp_cube.dz,&temp_cube.rho))
 					modCube.push_back(temp_cube);
 				else
 				{

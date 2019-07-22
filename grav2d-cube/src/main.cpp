@@ -5,8 +5,8 @@ void disp_help(char* proname)
 {
 	string exName = proname;
 	string exUsage = proname;
-	exUsage += " -r<x-start>/<x-step>/<x-end>/<y-start>/<y-step>/<y-end>/<elevation>|<filename> \
-	-c<x-cen>/<y-cen>/<z-cen>/<dx>/<dy>/<dz>/<density>|<filename> -tgravity|gx|gy|gz > out-file";
+	exUsage += " -r<y-start>/<y-step>/<y-end>/<x-start>/<x-step>/<x-end>/<elevation>|<filename> \
+	-c<y-cen>/<x-cen>/<z-cen>/<dy>/<dx>/<dz>/<density>|<filename> -tgravity|gx|gy|gz > out-file";
 	dispHelp dh;
 	dh.changeLayerOut(0,10);
 	dh.addHeadInfo(exName,"0.1","Forward calculation of gravitational data of cubes.","Yi Zhang (zhangyi.cugwuhan@gmail.com)");

@@ -1,5 +1,5 @@
 CC = g++-8 -fopenmp
-PROM = ./grav2d-cube
+PROM = /usr/local/sbin/grav2d-cube
 CFLAGS = -I.
 DEPS = $(shell find ./src -name "*.h")
 SRC = $(shell find ./src -name "*.cpp")

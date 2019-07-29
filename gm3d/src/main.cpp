@@ -4,25 +4,28 @@
 void display_help_info(char* program_name){
 	string ex_name = program_name;
 	string ex_usage = program_name;
-	ex_usage += " [-i<input-msh-name>] [-o<output-msh-name>] \
-	[-f<output-grav-file>] [-d<xs>/<dx>/<xe>/<ys>/<dy>/<ye>/<zs>/<dz>/<ze>] \
-	[-m<model-file>] [-e<element-data-name>] \
+	ex_usage += " [-i<input-msh-file>] [-o<output-msh-file>] \
+	[-f<output-data-file>] [-d<xs>/<dx>/<xe>/<ys>/<dy>/<ye>/<zs>/<dz>/<ze>] \
+	[-m<model-parameters>] [-e<element-data-name>] \
 	[-p<observation-file>|<xs>/<dx>/<xe>/<ys>/<dy>/<ye>/<elevation>] \
 	[-tVz|Vzx|Vzy|Vzz|DT|DTx|DTy|DTz|Hax|Hay|Za] [-v<I0>/<D0>/<I>/<D>] [-n<noise-mean>/<noise-dev>] [-r] [-h]";
 
 	DispHelp dh;
 	dh.changeLayerOut(0,10);
-	dh.addHeadInfo(ex_name,"0.1","3D model construction and forward modeling of gravity and magnetic data using the Cartesian coordinates.","Yi Zhang (zhangyiss@icloud.com)");
+	dh.addHeadInfo(ex_name,"1.0","3D forward modeling of gravity and magnetic data under the Cartesian coordinates.","Dr. Yi Zhang (zhangyiss@icloud.com). School of Earth Sciences, Zhejiang University");
 	dh.addUsage(ex_usage);
-	dh.addOption("Filename of the input Gmsh(.msh) file.","-i","");
-	dh.addOption("Filename of the output Gmsh(.msh) file.","-o","");
-	dh.addOption("Filename of the output observation file.","-f","");
-	dh.addOption("3D dimensions of the model space. 's' means the starting coordinate and 'e' represents the ending coordinate. 'dx' is the step length. The default value is 10/20/990/10/20/990/10/20/490.","-d","");
-	dh.addOption("Model file that contains different types of model parameter.","-m","");
-	dh.addOption("Element data name of the input/output Gmsh(.msh) file.","-e","");
-	dh.addOption("Observation locations","-p","");
+	dh.addOption("Filename of the input Gmsh(.msh) model file for forward calculation.","-i","");
+	dh.addOption("Filename of the output Gmsh(.msh) model file built with given parameters.","-o","");
+	dh.addOption("Filename of the output observation file of gravity or magnetic data.","-f","");
+	dh.addOption("3D dimensions of the model space. the suffix 's' means the starting coordinate and 'e' represents the ending coordinate in axial directions. \
+	 'dx', 'dy' and 'dz' are step lengths. The default value is 10/20/990/10/20/990/10/20/490. \
+	 The axial orientation adopted by the program is a right-hand Cartesian system with the z-axis point vertical downward.","-d","");
+	dh.addOption("Model file that contains different types of model parameter. See instructions for formats of different model types.","-m","");
+	dh.addOption("Element data name of the input/output Gmsh(.msh) file. Note that the name must be around by \"\".","-e","");
+	dh.addOption("Observation locations. You can either initialize the observation points from parameters or a file. \
+	 Each line of the file contain coordinates y(easting), x(northing) and z(elevation) of an observation point.","-p","");
 	dh.addOption("Forward component Vz, Vzx, Vzy or Vzz for gravitational data and \
-		DT, DTx, DTy, DTz, Hax, Hay and Za for magnetic data.","-t","");
+		DeltaT, DeltaTx, DeltaTy, DeltaTz, Hax, Hay and Za for magnetic data.","-t","");
 	dh.addOption("Inclination and declination of the geomagnetic field and magnetization.","-v","");
 	dh.addOption("Add noise to the forward calculated data","-n","");
 	dh.addOption("Remove model elements with no data in the output Gmsh(.msh) file.","-r","");
@@ -42,7 +45,7 @@ int main(int argc, char* argv[]){
 	char out_obserfile[1024] = "NULL";
 	char noise_para[1024] = "NULL";
 	char forward_type[1024] = "Vz";
-	char mag_field_para[1024] = "0/90/0/90";
+	char mag_field_para[1024] = "90/0/90/0";
 	bool build_model = true;
 	bool remove_null = false;
 
@@ -157,16 +160,16 @@ int main(int argc, char* argv[]){
 		else if (!strcmp(forward_type,"Vzz")){
 			gm3d_instance.ForwardVzz(noise_para);
 		}
-		else if (!strcmp(forward_type,"DT")){
+		else if (!strcmp(forward_type,"DeltaT")){
 			gm3d_instance.ForwardDeltaT(noise_para,mag_field_para);
 		}
-		else if (!strcmp(forward_type,"DTx")){
+		else if (!strcmp(forward_type,"DeltaTx")){
 			gm3d_instance.ForwardDeltaTx(noise_para,mag_field_para);
 		}
-		else if (!strcmp(forward_type,"DTy")){
+		else if (!strcmp(forward_type,"DeltaTy")){
 			gm3d_instance.ForwardDeltaTy(noise_para,mag_field_para);
 		}
-		else if (!strcmp(forward_type,"DTz")){
+		else if (!strcmp(forward_type,"DeltaTz")){
 			gm3d_instance.ForwardDeltaTz(noise_para,mag_field_para);
 		}
 		else if (!strcmp(forward_type,"Hax")){

@@ -1,4 +1,4 @@
-CC = g++-8 -fopenmp
+CC = g++-9 -fopenmp
 PROM = /usr/local/sbin/gm3d
 PROM2 = ./bin/gm3d
 CFLAGS = -I.

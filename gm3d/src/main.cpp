@@ -6,7 +6,7 @@ void display_help_info(char* program_name){
 	string ex_usage = program_name;
 	ex_usage += " [-i<input-msh-file>] [-o<output-msh-file>] \
 	[-f<output-data-file>] [-d<xs>/<dx>/<xe>/<ys>/<dy>/<ye>/<zs>/<dz>/<ze>] \
-	[-m<model-parameters>] [-e<element-data-name>] \
+	[-m<model-list-file>] [-e<element-data-name>] \
 	[-p<observation-file>|<xs>/<dx>/<xe>/<ys>/<dy>/<ye>/<elevation>] \
 	[-tVz|Vzx|Vzy|Vzz|DT|DTx|DTy|DTz|Hax|Hay|Za] [-v<I0>/<D0>/<I>/<D>] [-n<noise-mean>/<noise-dev>] [-r] [-h]";
 
@@ -14,22 +14,27 @@ void display_help_info(char* program_name){
 	dh.changeLayerOut(0,10);
 	dh.addHeadInfo(ex_name,"1.0","3D forward modeling of gravity and magnetic data under the Cartesian coordinates.","Dr. Yi Zhang (zhangyiss@icloud.com). School of Earth Sciences, Zhejiang University");
 	dh.addUsage(ex_usage);
-	dh.addOption("Filename of the input Gmsh(.msh) model file for forward calculation.","-i","");
-	dh.addOption("Filename of the output Gmsh(.msh) model file built with given parameters.","-o","");
-	dh.addOption("Filename of the output observation file of gravity or magnetic data.","-f","");
+	dh.addOption("Filename of the input Gmsh(.msh) model file for forward calculation.","-i");
+	dh.addOption("Filename of the output Gmsh(.msh) model file built with given parameters.","-o");
+	dh.addOption("Filename of the output observation file of gravity or magnetic data.","-f");
 	dh.addOption("3D dimensions of the model space. the suffix 's' means the starting coordinate and 'e' represents the ending coordinate in axial directions. \
 	 'dx', 'dy' and 'dz' are step lengths. The default value is 10/20/990/10/20/990/10/20/490. \
-	 The axial orientation adopted by the program is a right-hand Cartesian system with the z-axis point vertical downward.","-d","");
-	dh.addOption("Model file that contains different types of model parameter. See instructions for formats of different model types.","-m","");
-	dh.addOption("Element data name of the input/output Gmsh(.msh) file. Note that the name must be around by \"\".","-e","");
+	 The axial orientation adopted by the program is a right-hand Cartesian system with the z-axis point vertical downward.","-d");
+	dh.addOption("Model file that contains different types of model parameter. See instructions for formats of different model types. Note that any line starts with '#' will be skipped. \
+	Four different types of models are supported by the program. Keyword parameters for different model types are shown as:","-m");
+	dh.addOptionSec("1. regular_block add|replace|erase <physical_value> <xmin>/<xmax>/<ymin>/<ymax>/<zmin>/<zmax>");
+	dh.addOptionSec("2. tilted_block add|replace|erase <physical_value> <xmin_z>/<xmax_z>/<ymin_z>/<ymax_z>/<zmin>/<xmin_Z>/<xmax_Z>/<ymin_Z>/<ymax_Z>/<zmax>");
+	dh.addOptionSec("3. sphere add|replace|erase <physical_value> <xcen>/<ycen>/<zcen>/<xradius>/<yradius>/<zradius>");
+	dh.addOptionSec("4. interface add|replace|erase/top|bot <physical_value> <filename>");
+	dh.addOption("Element data name of the input/output Gmsh(.msh) file. Note that the name must be around by \"\".","-e");
 	dh.addOption("Observation locations. You can either initialize the observation points from parameters or a file. \
-	 Each line of the file contain coordinates y(easting), x(northing) and z(elevation) of an observation point.","-p","");
+	 Each line of the file contain coordinates y(easting), x(northing) and z(elevation) of an observation point.","-p");
 	dh.addOption("Forward component Vz, Vzx, Vzy or Vzz for gravitational data and \
-		DeltaT, DeltaTx, DeltaTy, DeltaTz, Hax, Hay and Za for magnetic data.","-t","");
-	dh.addOption("Inclination and declination of the geomagnetic field and magnetization.","-v","");
-	dh.addOption("Add noise to the forward calculated data","-n","");
-	dh.addOption("Remove model elements with no data in the output Gmsh(.msh) file.","-r","");
-	dh.addOption("Display help information.","-h","");
+		DeltaT, DeltaTx, DeltaTy, DeltaTz, Hax, Hay and Za for magnetic data.","-t");
+	dh.addOption("Inclination and declination of the geomagnetic field and magnetization.","-v");
+	dh.addOption("Add noise to the forward calculated data","-n");
+	dh.addOption("Remove model elements with no data in the output Gmsh(.msh) file.","-r");
+	dh.addOption("Display help information.","-h");
 	dh.show();
 	return;
 }

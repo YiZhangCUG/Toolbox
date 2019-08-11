@@ -12,7 +12,7 @@ void DispHelp::addUsage(string usg)
 	return;
 }
 
-void DispHelp::addOption(string msg,string sflag,string lflag = "")
+void DispHelp::addOption(string msg,string sflag,string lflag)
 {
 	option tmp_option;
 	tmp_option.message = msg; tmp_option.flag_s = sflag; tmp_option.flag_l = lflag;
@@ -20,7 +20,7 @@ void DispHelp::addOption(string msg,string sflag,string lflag = "")
 	return;
 }
 
-void DispHelp::addOptionSec(string msg,int index = -1)
+void DispHelp::addOptionSec(string msg,int index)
 {
 	if (index < 0)
 	{

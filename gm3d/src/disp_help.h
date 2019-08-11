@@ -41,8 +41,8 @@ public:
 	~DispHelp(){}
 	void addHeadInfo(string,string,string,string);
 	void addUsage(string);
-	void addOption(string,string,string);
-	void addOptionSec(string,int);
+	void addOption(string,string,string lflag = "");
+	void addOptionSec(string,int index = -1);
 	void addExample(string);
 	void changeLayerOut(int,int);
 	void show();

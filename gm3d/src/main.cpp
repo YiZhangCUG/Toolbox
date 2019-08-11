@@ -4,11 +4,11 @@
 void display_help_info(char* program_name){
 	string ex_name = program_name;
 	string ex_usage = program_name;
-	ex_usage += " [-i<input-msh-file>] [-o<output-msh-file>] \
-	[-f<output-data-file>] [-d<xs>/<dx>/<xe>/<ys>/<dy>/<ye>/<zs>/<dz>/<ze>] \
-	[-m<model-list-file>] [-e<element-data-name>] \
-	[-p<observation-file>|<xs>/<dx>/<xe>/<ys>/<dy>/<ye>/<elevation>] \
-	[-tVz|Vzx|Vzy|Vzz|DT|DTx|DTy|DTz|Hax|Hay|Za] [-v<I0>/<D0>/<I>/<D>] [-n<noise-mean>/<noise-dev>] [-r] [-h]";
+	ex_usage += " {-o<output-msh-file> -m<model-list-file>  \
+	[-d<xs>/<dx>/<xe>/<ys>/<dy>/<ye>/<zs>/<dz>/<ze>] [-r]} \
+	| {-i<input-msh-file> -p<observation-file>|<xs>/<dx>/<xe>/<ys>/<dy>/<ye>/<elevation> \
+	-f<output-data-file> -tVz|Vzx|Vzy|Vzz|DT|DTx|DTy|DTz|Hax|Hay|Za \
+	[-v<I0>/<D0>/<I>/<D>] [-n<noise-mean>/<noise-dev>]} -e<element-data-name> [-h]";
 
 	DispHelp dh;
 	dh.changeLayerOut(0,10);

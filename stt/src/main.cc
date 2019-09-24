@@ -17,7 +17,7 @@ void disp_help(char* proname){
 [-s<outline-shape-filename>] \
 [-k<hole-shape-filename>] \
 [-h]";
-	clog << proname << " - v1.0 Spherical Triangular Tessellation(STT) generator." << endl;
+	clog << proname << " - v1.1 Spherical Triangular Tessellation(STT) generator." << endl;
 	clog << "Usage: " << exe_name << endl;
 	clog << "Options:" << endl;
 	clog << "\t-d\tMinimal and maximal quad-tree depths of the output STT." << endl;

@@ -17,6 +17,7 @@ int SttGenerator::OutputNeighbor(char* filename)
 	outfile << "# This file is created by stt-generator.ex on " << dt;
 	outfile << "# Commands: " << command_record_ << endl;
 	outfile << "# Triangle number: "<< array_out_tri_pointer_.size() << endl;
+	outfile << "# Invalid number: -1" << endl;
 	outfile << "# triangle_id neighbor_id1 neighbor_id2 neighbor_id3" << endl;
 	for (int i = 0; i < array_out_tri_pointer_.size(); i++){
 		outfile << i;
@@ -24,6 +25,7 @@ int SttGenerator::OutputNeighbor(char* filename)
 			if (array_out_tri_pointer_[i]->neighbor[j] != NULL){
 				outfile << " " << map_out_triangle_id_[array_out_tri_pointer_[i]->neighbor[j]->id];
 			}
+			else outfile << " -1";
 		}
 		outfile << endl;
 	}

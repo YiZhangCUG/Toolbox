@@ -1,5 +1,5 @@
-CC = g++-8
-PROM = stt
+CC = g++-9
+PROM = /usr/local/sbin/selfpro/stt
 CFLAGS = -I.
 DEPS = $(shell find ./src -name "*.h")
 SRC = $(shell find ./src -name "*.cc")
